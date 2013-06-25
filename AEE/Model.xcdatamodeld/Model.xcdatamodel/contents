@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model name="" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="2061" systemVersion="12D78" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="Barrios" representedClassName="Barrios" syncable="YES">
+        <attribute name="county" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="relationship" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Coordinates" syncable="YES"/>
+    </entity>
+    <entity name="Coordinates" representedClassName="Coordinates" syncable="YES">
+        <attribute name="x" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="y" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+    </entity>
+    <entity name="Pueblo" representedClassName="Pueblo" syncable="YES">
+        <attribute name="county" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="lsad" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="relationship" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Barrios" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Pueblo" positionX="288" positionY="-234" width="128" height="103"/>
+        <element name="Barrios" positionX="288" positionY="-97" width="128" height="88"/>
+        <element name="Coordinates" positionX="288" positionY="87" width="128" height="73"/>
+    </elements>
+</model>

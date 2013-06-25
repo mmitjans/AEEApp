@@ -10,4 +10,6 @@
 
 @interface ZMViewController : UIViewController
 
+@property (nonatomic, strong) NSMutableArray* breakDowns;
+
 @end
