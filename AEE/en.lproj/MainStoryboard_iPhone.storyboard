@@ -117,15 +117,34 @@
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </label>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="stc-HG-TcT">
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="47" id="1ne-nR-tCs"/>
+                                                <constraint firstAttribute="height" constant="17" id="GEL-eg-hbS"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                            <state key="normal" title="Map">
+                                                <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                            </state>
+                                            <state key="highlighted">
+                                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            </state>
+                                            <connections>
+                                                <action selector="mapNeeded:" destination="OBN-aV-vHO" eventType="touchUpInside" id="sGO-pc-WtR"/>
+                                            </connections>
+                                        </button>
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
                                 <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="fFr-05-aoX" secondAttribute="bottom" constant="13" id="4Pm-xx-fO5"/>
-                                    <constraint firstItem="ueW-3p-M1f" firstAttribute="baseline" secondItem="fFr-05-aoX" secondAttribute="baseline" type="default" id="A3G-Em-4bb"/>
+                                    <constraint firstItem="1tz-eN-1Qn" firstAttribute="top" secondItem="1RB-p6-mTd" secondAttribute="top" constant="6" id="0A5-C6-VFD"/>
+                                    <constraint firstItem="stc-HG-TcT" firstAttribute="trailing" secondItem="ueW-3p-M1f" secondAttribute="trailing" type="default" id="2hy-yY-kEl"/>
+                                    <constraint firstAttribute="bottom" secondItem="fFr-05-aoX" secondAttribute="bottom" constant="7" id="GiK-qU-UwN"/>
+                                    <constraint firstAttribute="trailing" secondItem="ueW-3p-M1f" secondAttribute="trailing" constant="7" id="NGN-XM-0SP"/>
                                     <constraint firstItem="1tz-eN-1Qn" firstAttribute="leading" secondItem="1RB-p6-mTd" secondAttribute="leading" constant="11" id="ZoV-ZH-VOD"/>
-                                    <constraint firstItem="1tz-eN-1Qn" firstAttribute="top" secondItem="1RB-p6-mTd" secondAttribute="top" constant="6" id="byz-yu-IPg"/>
-                                    <constraint firstAttribute="trailing" secondItem="ueW-3p-M1f" secondAttribute="trailing" constant="20" type="default" id="vu9-t7-jdR"/>
+                                    <constraint firstItem="ueW-3p-M1f" firstAttribute="top" secondItem="1RB-p6-mTd" secondAttribute="top" constant="20" type="default" id="sdw-cF-NJa"/>
+                                    <constraint firstItem="stc-HG-TcT" firstAttribute="centerY" secondItem="fFr-05-aoX" secondAttribute="centerY" type="default" id="ssN-WS-IsE"/>
                                     <constraint firstItem="fFr-05-aoX" firstAttribute="leading" secondItem="1tz-eN-1Qn" secondAttribute="leading" type="default" id="wjV-AW-LhG"/>
                                 </constraints>
                                 <connections>

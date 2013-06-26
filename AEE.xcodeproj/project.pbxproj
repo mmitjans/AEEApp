@@ -29,6 +29,12 @@
 		488107CE1777649000B9C839 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 488107CD1777649000B9C839 /* CoreData.framework */; };
 		488107D21777E8C300B9C839 /* ZMEntityManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 488107D11777E8C300B9C839 /* ZMEntityManager.m */; };
 		488107D51779374500B9C839 /* ZMCoordinate.m in Sources */ = {isa = PBXBuildFile; fileRef = 488107D41779374500B9C839 /* ZMCoordinate.m */; };
+		488107D9177952A700B9C839 /* ZMMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 488107D7177952A700B9C839 /* ZMMapViewController.m */; };
+		488107DA177952A700B9C839 /* ZMMapViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 488107D8177952A700B9C839 /* ZMMapViewController.xib */; };
+		488107DF177A5B4F00B9C839 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 488107DE177A5B4E00B9C839 /* MapKit.framework */; };
+		488107E3177A73BF00B9C839 /* UIViewController+KNSemiModal.m in Sources */ = {isa = PBXBuildFile; fileRef = 488107E2177A73BF00B9C839 /* UIViewController+KNSemiModal.m */; };
+		488107E4177A78B500B9C839 /* UIViewController+KNSemiModal.h in Sources */ = {isa = PBXBuildFile; fileRef = 488107E1177A73BF00B9C839 /* UIViewController+KNSemiModal.h */; };
+		488107E5177A78B500B9C839 /* UIViewController+KNSemiModal.m in Sources */ = {isa = PBXBuildFile; fileRef = 488107E2177A73BF00B9C839 /* UIViewController+KNSemiModal.m */; };
 		48BC73491775481F00D0D6E3 /* ZMBarrio.m in Sources */ = {isa = PBXBuildFile; fileRef = 48BC73481775481F00D0D6E3 /* ZMBarrio.m */; };
 		48CFCA53176E9FAA00BE1FE7 /* ZMGradientView.m in Sources */ = {isa = PBXBuildFile; fileRef = 48CFCA52176E9FAA00BE1FE7 /* ZMGradientView.m */; };
 		48CFCA55176EA04400BE1FE7 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48CFCA54176EA04400BE1FE7 /* QuartzCore.framework */; };
@@ -117,6 +123,12 @@
 		488107D11777E8C300B9C839 /* ZMEntityManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZMEntityManager.m; sourceTree = "<group>"; };
 		488107D31779374400B9C839 /* ZMCoordinate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZMCoordinate.h; sourceTree = "<group>"; };
 		488107D41779374500B9C839 /* ZMCoordinate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZMCoordinate.m; sourceTree = "<group>"; };
+		488107D6177952A600B9C839 /* ZMMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZMMapViewController.h; sourceTree = "<group>"; };
+		488107D7177952A700B9C839 /* ZMMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZMMapViewController.m; sourceTree = "<group>"; };
+		488107D8177952A700B9C839 /* ZMMapViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZMMapViewController.xib; sourceTree = "<group>"; };
+		488107DE177A5B4E00B9C839 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		488107E1177A73BF00B9C839 /* UIViewController+KNSemiModal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+KNSemiModal.h"; sourceTree = "<group>"; };
+		488107E2177A73BF00B9C839 /* UIViewController+KNSemiModal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+KNSemiModal.m"; sourceTree = "<group>"; };
 		48BC73471775481F00D0D6E3 /* ZMBarrio.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZMBarrio.h; sourceTree = "<group>"; };
 		48BC73481775481F00D0D6E3 /* ZMBarrio.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZMBarrio.m; sourceTree = "<group>"; };
 		48CFCA51176E9FAA00BE1FE7 /* ZMGradientView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZMGradientView.h; sourceTree = "<group>"; };
@@ -188,6 +200,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				488107DF177A5B4F00B9C839 /* MapKit.framework in Frameworks */,
 				488107CE1777649000B9C839 /* CoreData.framework in Frameworks */,
 				48CFCA68176EACC700BE1FE7 /* SystemConfiguration.framework in Frameworks */,
 				48CFCA66176EACC200BE1FE7 /* StoreKit.framework in Frameworks */,
@@ -272,6 +285,15 @@
 			name = DataModel;
 			sourceTree = "<group>";
 		};
+		488107E0177A719E00B9C839 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				488107E1177A73BF00B9C839 /* UIViewController+KNSemiModal.h */,
+				488107E2177A73BF00B9C839 /* UIViewController+KNSemiModal.m */,
+			);
+			name = Source;
+			sourceTree = "<group>";
+		};
 		48EA93AA1767EC5C00A91B5C = {
 			isa = PBXGroup;
 			children = (
@@ -295,6 +317,7 @@
 		48EA93B51767EC5C00A91B5C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				488107DE177A5B4E00B9C839 /* MapKit.framework */,
 				488107CD1777649000B9C839 /* CoreData.framework */,
 				48CFCA67176EACC700BE1FE7 /* SystemConfiguration.framework */,
 				48CFCA65176EACC200BE1FE7 /* StoreKit.framework */,
@@ -318,6 +341,7 @@
 		48EA93BC1767EC5C00A91B5C /* AEE */ = {
 			isa = PBXGroup;
 			children = (
+				488107E0177A719E00B9C839 /* Source */,
 				488107CF177764AD00B9C839 /* DataModel */,
 				481A9166176FFE8B007B6732 /* Assets */,
 				481A914A176FFCB1007B6732 /* Login */,
@@ -352,6 +376,9 @@
 				488107CC177762BC00B9C839 /* DataModel */,
 				488107D31779374400B9C839 /* ZMCoordinate.h */,
 				488107D41779374500B9C839 /* ZMCoordinate.m */,
+				488107D6177952A600B9C839 /* ZMMapViewController.h */,
+				488107D7177952A700B9C839 /* ZMMapViewController.m */,
+				488107D8177952A700B9C839 /* ZMMapViewController.xib */,
 			);
 			path = AEE;
 			sourceTree = "<group>";
@@ -498,6 +525,7 @@
 				481A9165176FFE75007B6732 /* SignUpFieldBG.png in Resources */,
 				481A916A17700853007B6732 /* Login.png in Resources */,
 				481A916C17700AA9007B6732 /* barrios.json in Resources */,
+				488107DA177952A700B9C839 /* ZMMapViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -532,6 +560,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				488107E4177A78B500B9C839 /* UIViewController+KNSemiModal.h in Sources */,
+				488107E5177A78B500B9C839 /* UIViewController+KNSemiModal.m in Sources */,
 				48EA93C31767EC5C00A91B5C /* main.m in Sources */,
 				48EA93C71767EC5C00A91B5C /* ZMAppDelegate.m in Sources */,
 				48EA93D61767EC5C00A91B5C /* ZMViewController.m in Sources */,
@@ -561,6 +591,7 @@
 				488107CA1777629200B9C839 /* Pueblo.m in Sources */,
 				488107D21777E8C300B9C839 /* ZMEntityManager.m in Sources */,
 				488107D51779374500B9C839 /* ZMCoordinate.m in Sources */,
+				488107D9177952A700B9C839 /* ZMMapViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -569,6 +600,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				48EA93EB1767EC5C00A91B5C /* AEETests.m in Sources */,
+				488107E3177A73BF00B9C839 /* UIViewController+KNSemiModal.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

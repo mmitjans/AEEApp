@@ -13,8 +13,10 @@
 #import "BreakdownReportSvc.h"
 
 #import "ZMGradientView.h"
+#import "ZMMapViewController.h"
 
-
+#import "UIViewController+KNSemiModal.h"
+#import <QuartzCore/QuartzCore.h>
 @interface ZMBDownsDetailedTableViewController ()
 
 @end
@@ -28,14 +30,25 @@
     self = [super initWithStyle:style];
     if (self) {
         // Custom initialization
+        
     }
     
     return self;
+}
+- (IBAction)mapNeeded:(id)sender {
+    [self presentSemiViewController:myView withOptions:@{
+     KNSemiModalOptionKeys.pushParentBack    : @(YES),
+     KNSemiModalOptionKeys.animationDuration : @(2.0),
+     KNSemiModalOptionKeys.shadowOpacity     : @(0.3),
+	 }];
+
 }
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    myView = [[ZMMapViewController alloc] initWithNibName:@"ZMMapViewController" bundle:nil];
 
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -126,13 +139,7 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    // Navigation logic may go here. Create and push another view controller.
-    /*
-     <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
-     // ...
-     // Pass the selected object to the new view controller.
-     [self.navigationController pushViewController:detailViewController animated:YES];
-     */
+    
 }
 
 @end

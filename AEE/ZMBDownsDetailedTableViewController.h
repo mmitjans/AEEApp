@@ -8,8 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ZMBDownsDetailedTableViewController : UITableViewController
+@class ZMMapViewController;
+
+@interface ZMBDownsDetailedTableViewController : UITableViewController {
+    ZMMapViewController* myView;
+}
 
 @property (nonatomic, strong) NSMutableDictionary *townName;
+
 
 @end
