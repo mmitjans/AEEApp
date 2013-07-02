@@ -30,23 +30,23 @@
     self = [super initWithStyle:style];
     if (self) {
         // Custom initialization
-        
     }
     
     return self;
 }
 - (IBAction)mapNeeded:(id)sender {
-    [self presentSemiViewController:myView withOptions:@{
-     KNSemiModalOptionKeys.pushParentBack    : @(YES),
-     KNSemiModalOptionKeys.animationDuration : @(2.0),
-     KNSemiModalOptionKeys.shadowOpacity     : @(0.3),
-	 }];
-
+    
+    
 }
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(semiModalDismissed:)
+                                                 name:kSemiModalDidHideNotification
+                                               object:nil];
     
     myView = [[ZMMapViewController alloc] initWithNibName:@"ZMMapViewController" bundle:nil];
 
@@ -61,6 +61,14 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)semiModalDismissed:(NSNotification *) notification {
+    if (notification.object == self) {
+        NSLog(@"A view controller was dismissed with semi modal annimation");
+        
+        [self.tableView reloadData];
+    }
 }
 
 #pragma mark - Table view data source
@@ -139,7 +147,32 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    NSMutableArray *myArray = [self.townName mutableCopy];
     
+    ax22_BreakdownArea *area = [myArray objectAtIndex:indexPath.row];
+    
+    NSString *barrioName = [area r2Area];
+    
+    NSString *search = @"Bo ";
+    
+    NSRange theRange = [barrioName rangeOfString:search];
+    
+    if (theRange.location != NSNotFound) {
+        
+        NSString *sub =
+            [barrioName substringFromIndex:NSMaxRange(theRange)];
+        [myView setBarrioName:sub];
+    } else {
+        [myView setBarrioName:barrioName];
+    }
+    
+    [myView setPuebloName:[area r1TownOrCity]];
+    
+    [self presentSemiViewController:myView withOptions:@{
+     KNSemiModalOptionKeys.pushParentBack    : @(YES),
+     KNSemiModalOptionKeys.animationDuration : @(1.0),
+     KNSemiModalOptionKeys.shadowOpacity     : @(0.3),
+	 }];
 }
 
 @end

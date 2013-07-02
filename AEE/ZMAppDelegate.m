@@ -33,15 +33,18 @@
     
     [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
     
-    ZMConfigDataParser *parser = [[ZMConfigDataParser alloc] init];
-    
-    NSMutableDictionary* pueblos = [parser processConfigData];
-    
     ZMEntityManager *entityManager = [ZMEntityManager sharedInstance];
     
-    [entityManager clearPueblos];
+    NSArray *currentPueblos = [entityManager getAllPueblos];
     
-    //[entityManager storePueblo:pueblos];
+    // If there are no pueblos
+    if([currentPueblos count] == 0 )
+    {
+        ZMConfigDataParser *parser = [[ZMConfigDataParser alloc] init];
+        
+        NSMutableDictionary* pueblos = [parser processConfigData];
+        [entityManager storePueblo:pueblos];
+    }
     
     return YES;
 }

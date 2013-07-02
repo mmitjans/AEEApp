@@ -78,6 +78,17 @@
 		48EA941417693EE700A91B5C /* ZMBreakdownsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 48EA941317693EE700A91B5C /* ZMBreakdownsTableViewCell.m */; };
 		48EA941A1769524400A91B5C /* ZMBDownsDetailedTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 48EA94191769524400A91B5C /* ZMBDownsDetailedTableViewController.m */; };
 		48EA941D1769551300A91B5C /* ZMBDownsDetailedTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 48EA941C1769551300A91B5C /* ZMBDownsDetailedTableViewCell.m */; };
+		48FAA926177CF2DF001F8A3F /* ZMGeocoder.m in Sources */ = {isa = PBXBuildFile; fileRef = 48FAA925177CF2DF001F8A3F /* ZMGeocoder.m */; };
+		48FAA929177E8D3A001F8A3F /* ZMPointAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 48FAA928177E8D39001F8A3F /* ZMPointAnnotation.m */; };
+		48FAA93B177E9B42001F8A3F /* ZMSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 48FAA93A177E9B42001F8A3F /* ZMSettingsViewController.m */; };
+		48FAA93E177FD421001F8A3F /* ZMPueblosViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 48FAA93D177FD421001F8A3F /* ZMPueblosViewController.m */; };
+		48FAA941177FD88E001F8A3F /* ZMBarriosViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 48FAA940177FD88E001F8A3F /* ZMBarriosViewController.m */; };
+		48FAA944177FE8D9001F8A3F /* ZMLocationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 48FAA943177FE8D9001F8A3F /* ZMLocationViewController.m */; };
+		48FAA94717809E71001F8A3F /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 48FAA94617809E71001F8A3F /* User.m */; };
+		48FAA94B17826BCE001F8A3F /* ZMNewUserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 48FAA94917826BCC001F8A3F /* ZMNewUserViewController.m */; };
+		48FAA94C17826BCE001F8A3F /* ZMNewUserViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 48FAA94A17826BCD001F8A3F /* ZMNewUserViewController.xib */; };
+		48FAA94F178273DF001F8A3F /* PAWActivityView.m in Sources */ = {isa = PBXBuildFile; fileRef = 48FAA94E178273DE001F8A3F /* PAWActivityView.m */; };
+		48FAA950178273DF001F8A3F /* PAWActivityView.m in Sources */ = {isa = PBXBuildFile; fileRef = 48FAA94E178273DE001F8A3F /* PAWActivityView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -193,6 +204,25 @@
 		48EA94191769524400A91B5C /* ZMBDownsDetailedTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZMBDownsDetailedTableViewController.m; sourceTree = "<group>"; };
 		48EA941B1769551300A91B5C /* ZMBDownsDetailedTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZMBDownsDetailedTableViewCell.h; sourceTree = "<group>"; };
 		48EA941C1769551300A91B5C /* ZMBDownsDetailedTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZMBDownsDetailedTableViewCell.m; sourceTree = "<group>"; };
+		48FAA924177CF2DF001F8A3F /* ZMGeocoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZMGeocoder.h; sourceTree = "<group>"; };
+		48FAA925177CF2DF001F8A3F /* ZMGeocoder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZMGeocoder.m; sourceTree = "<group>"; };
+		48FAA927177E8D39001F8A3F /* ZMPointAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZMPointAnnotation.h; sourceTree = "<group>"; };
+		48FAA928177E8D39001F8A3F /* ZMPointAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZMPointAnnotation.m; sourceTree = "<group>"; };
+		48FAA939177E9B42001F8A3F /* ZMSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZMSettingsViewController.h; sourceTree = "<group>"; };
+		48FAA93A177E9B42001F8A3F /* ZMSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZMSettingsViewController.m; sourceTree = "<group>"; };
+		48FAA93C177FD421001F8A3F /* ZMPueblosViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZMPueblosViewController.h; sourceTree = "<group>"; };
+		48FAA93D177FD421001F8A3F /* ZMPueblosViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZMPueblosViewController.m; sourceTree = "<group>"; };
+		48FAA93F177FD88E001F8A3F /* ZMBarriosViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZMBarriosViewController.h; sourceTree = "<group>"; };
+		48FAA940177FD88E001F8A3F /* ZMBarriosViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZMBarriosViewController.m; sourceTree = "<group>"; };
+		48FAA942177FE8D8001F8A3F /* ZMLocationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZMLocationViewController.h; sourceTree = "<group>"; };
+		48FAA943177FE8D9001F8A3F /* ZMLocationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZMLocationViewController.m; sourceTree = "<group>"; };
+		48FAA94517809E71001F8A3F /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
+		48FAA94617809E71001F8A3F /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
+		48FAA94817826BCB001F8A3F /* ZMNewUserViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZMNewUserViewController.h; sourceTree = "<group>"; };
+		48FAA94917826BCC001F8A3F /* ZMNewUserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZMNewUserViewController.m; sourceTree = "<group>"; };
+		48FAA94A17826BCD001F8A3F /* ZMNewUserViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZMNewUserViewController.xib; sourceTree = "<group>"; };
+		48FAA94D178273DD001F8A3F /* PAWActivityView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PAWActivityView.h; sourceTree = "<group>"; };
+		48FAA94E178273DE001F8A3F /* PAWActivityView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PAWActivityView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -273,6 +303,8 @@
 			isa = PBXGroup;
 			children = (
 				488107BF177680BB00B9C839 /* Model.xcdatamodeld */,
+				48FAA94517809E71001F8A3F /* User.h */,
+				48FAA94617809E71001F8A3F /* User.m */,
 				488107C81777629200B9C839 /* Pueblo.h */,
 				488107C91777629200B9C839 /* Pueblo.m */,
 				488107C51777627600B9C839 /* Coordinates.h */,
@@ -341,6 +373,8 @@
 		48EA93BC1767EC5C00A91B5C /* AEE */ = {
 			isa = PBXGroup;
 			children = (
+				48FAA94D178273DD001F8A3F /* PAWActivityView.h */,
+				48FAA94E178273DE001F8A3F /* PAWActivityView.m */,
 				488107E0177A719E00B9C839 /* Source */,
 				488107CF177764AD00B9C839 /* DataModel */,
 				481A9166176FFE8B007B6732 /* Assets */,
@@ -379,6 +413,21 @@
 				488107D6177952A600B9C839 /* ZMMapViewController.h */,
 				488107D7177952A700B9C839 /* ZMMapViewController.m */,
 				488107D8177952A700B9C839 /* ZMMapViewController.xib */,
+				48FAA924177CF2DF001F8A3F /* ZMGeocoder.h */,
+				48FAA925177CF2DF001F8A3F /* ZMGeocoder.m */,
+				48FAA927177E8D39001F8A3F /* ZMPointAnnotation.h */,
+				48FAA928177E8D39001F8A3F /* ZMPointAnnotation.m */,
+				48FAA939177E9B42001F8A3F /* ZMSettingsViewController.h */,
+				48FAA93A177E9B42001F8A3F /* ZMSettingsViewController.m */,
+				48FAA93C177FD421001F8A3F /* ZMPueblosViewController.h */,
+				48FAA93D177FD421001F8A3F /* ZMPueblosViewController.m */,
+				48FAA93F177FD88E001F8A3F /* ZMBarriosViewController.h */,
+				48FAA940177FD88E001F8A3F /* ZMBarriosViewController.m */,
+				48FAA942177FE8D8001F8A3F /* ZMLocationViewController.h */,
+				48FAA943177FE8D9001F8A3F /* ZMLocationViewController.m */,
+				48FAA94817826BCB001F8A3F /* ZMNewUserViewController.h */,
+				48FAA94917826BCC001F8A3F /* ZMNewUserViewController.m */,
+				48FAA94A17826BCD001F8A3F /* ZMNewUserViewController.xib */,
 			);
 			path = AEE;
 			sourceTree = "<group>";
@@ -526,6 +575,7 @@
 				481A916A17700853007B6732 /* Login.png in Resources */,
 				481A916C17700AA9007B6732 /* barrios.json in Resources */,
 				488107DA177952A700B9C839 /* ZMMapViewController.xib in Resources */,
+				48FAA94C17826BCE001F8A3F /* ZMNewUserViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -592,6 +642,15 @@
 				488107D21777E8C300B9C839 /* ZMEntityManager.m in Sources */,
 				488107D51779374500B9C839 /* ZMCoordinate.m in Sources */,
 				488107D9177952A700B9C839 /* ZMMapViewController.m in Sources */,
+				48FAA926177CF2DF001F8A3F /* ZMGeocoder.m in Sources */,
+				48FAA929177E8D3A001F8A3F /* ZMPointAnnotation.m in Sources */,
+				48FAA93B177E9B42001F8A3F /* ZMSettingsViewController.m in Sources */,
+				48FAA93E177FD421001F8A3F /* ZMPueblosViewController.m in Sources */,
+				48FAA941177FD88E001F8A3F /* ZMBarriosViewController.m in Sources */,
+				48FAA944177FE8D9001F8A3F /* ZMLocationViewController.m in Sources */,
+				48FAA94717809E71001F8A3F /* User.m in Sources */,
+				48FAA94B17826BCE001F8A3F /* ZMNewUserViewController.m in Sources */,
+				48FAA94F178273DF001F8A3F /* PAWActivityView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -601,6 +660,7 @@
 			files = (
 				48EA93EB1767EC5C00A91B5C /* AEETests.m in Sources */,
 				488107E3177A73BF00B9C839 /* UIViewController+KNSemiModal.m in Sources */,
+				48FAA950178273DF001F8A3F /* PAWActivityView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

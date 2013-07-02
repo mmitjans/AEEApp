@@ -3,7 +3,7 @@
     <entity name="Barrios" representedClassName="Barrios" syncable="YES">
         <attribute name="county" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="relationship" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Coordinates" syncable="YES"/>
+        <relationship name="relationship" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Coordinates" syncable="YES"/>
     </entity>
     <entity name="Coordinates" representedClassName="Coordinates" syncable="YES">
         <attribute name="x" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
@@ -13,11 +13,19 @@
         <attribute name="county" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="lsad" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="relationship" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Barrios" syncable="YES"/>
+        <relationship name="relationship" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Barrios" syncable="YES"/>
+    </entity>
+    <entity name="User" representedClassName="User" syncable="YES">
+        <attribute name="barrio" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="password" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="pueblo" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="username" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="coordinates" optional="YES" minCount="1" maxCount="1" deletionRule="Cascade" destinationEntity="Coordinates" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Pueblo" positionX="288" positionY="-234" width="128" height="103"/>
         <element name="Barrios" positionX="288" positionY="-97" width="128" height="88"/>
         <element name="Coordinates" positionX="288" positionY="87" width="128" height="73"/>
+        <element name="Pueblo" positionX="288" positionY="-234" width="128" height="103"/>
+        <element name="User" positionX="457" positionY="-234" width="128" height="118"/>
     </elements>
 </model>

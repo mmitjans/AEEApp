@@ -9,10 +9,19 @@
 #import <UIKit/UIKit.h>
 #import <MapKit/MapKit.h>
 
+#import "ZMGeocoder.h"
+
 @interface ZMMapViewController : UIViewController <MKMapViewDelegate>
 {
-        MKMapView *_mapView;
+    MKMapView *_mapView;
+    ZMGeocoder *myGeocoder;
+    
+    CLGeocodeCompletionHandler geoCoderHandler;
+    
+
 }
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
-
+@property (nonatomic, strong) NSString* barrioName;
+@property (nonatomic, strong) NSString* puebloName;
+@property (nonatomic, strong) ZMGeocoder* myGeocoder;
 @end

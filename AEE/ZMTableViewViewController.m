@@ -17,6 +17,9 @@
 #import "ZMGradientView.h"
 
 #import "ZMUserConfigViewController.h"
+#import "ZMNewUserViewController.h"
+
+#import <Parse/Parse.h>
 
 @interface ZMTableViewViewController ()
 
@@ -144,6 +147,7 @@
     self.loaded = YES;
 }
 
+// Settings button
 - (IBAction)reportAction:(id)sender
 {
     [PFUser logOut];
@@ -243,8 +247,18 @@
         
         
         destViewController.townName = [self.breakDownsDetails objectForKey:summary.r1TownOrCity];
+        
+    } else if ([segue.identifier isEqualToString:@"settingsSegue"]) {
+        
+        PFUser *currentUser = [PFUser currentUser];
+        if (!currentUser)
+        {
+            ZMNewUserViewController *newUserViewController = [[ZMNewUserViewController alloc] initWithNibName:nil bundle:nil];
+            [self.navigationController presentViewController:newUserViewController animated:YES completion:^{}];
+        }
     }
 }
+
 - (IBAction)reportBreakdown:(id)sender {
     
 }

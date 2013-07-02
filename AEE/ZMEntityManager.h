@@ -11,6 +11,7 @@
 
 @class Barrios;
 @class Pueblo;
+@class User;
 
 @interface ZMEntityManager : NSObject
 
@@ -18,11 +19,19 @@
 
 // Getter Methos
 -(Barrios*) getBarriosFromPueblo:(Pueblo*) pueblo;
+-(Barrios*) getBarrio:(NSString*)name;
+-(NSArray*) getCoordinatesForBarrio:(NSString*) name;
 
 -(NSArray*) getAllPueblos;
 
 // Setter Methods
 -(void) storePueblo:(NSMutableDictionary*) pueblos;
+-(void) storeUserCoordinate:(NSNumber*) xCoordinate
+              andCoordinate:(NSNumber*) yCoordinate
+                forUserName:(NSString*) name;
+
+
+-(User*) storeUser;
 
 -(void) clearPueblos;
 

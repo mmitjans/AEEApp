@@ -16,6 +16,7 @@
 #import "Pueblo.h"
 #import "Barrios.h"
 #import "Coordinates.h"
+#import "User.h"
 
 @implementation ZMEntityManager
 
@@ -34,9 +35,64 @@
     return SharedInstance;
 }
 
+-(id)singleObjectOfType:(NSString*)objectType matchingKey:(NSString*)objectKey matchingValue:(NSObject*)objectKeyValue
+{
+    if(!objectKeyValue){
+        return nil;
+    }
+    
+    NSString* formatString = [NSString stringWithFormat:@"(%@=%%@)",objectKey];
+    
+    NSPredicate* singleObjectPredicate = [NSPredicate predicateWithFormat:formatString, objectKeyValue];
+    
+    NSFetchRequest* fetchRequest = [[NSFetchRequest alloc]init];
+    [fetchRequest setEntity:[NSEntityDescription entityForName:objectType inManagedObjectContext:self.managedObjectContext]];
+    [fetchRequest setPredicate:singleObjectPredicate];
+    //    [fetchRequest setFetchLimit:1];
+    [fetchRequest setReturnsObjectsAsFaults:YES];
+    
+    NSSortDescriptor* sortDescriptor = [NSSortDescriptor sortDescriptorWithKey:objectKey ascending:YES];
+    [fetchRequest setSortDescriptors:[NSArray arrayWithObject:sortDescriptor]];
+    
+    NSFetchedResultsController* singleObjectFetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest managedObjectContext:self.managedObjectContext sectionNameKeyPath:nil cacheName:nil];
+    
+    NSError* fetchError = nil;
+    if(![singleObjectFetchedResultsController performFetch:&fetchError]){
+        return nil;
+    }
+    
+    NSArray* fetchedObjectArray = [singleObjectFetchedResultsController fetchedObjects];
+    
+    if([fetchedObjectArray count] == 0){
+        return nil;
+    }
+    return [fetchedObjectArray objectAtIndex:0];
+}
+
+
 // Getter Methos
 -(Barrios*) getBarriosFromPueblo:(Pueblo*) pueblo
 {}
+
+-(Barrios*) getBarrio:(NSString*)name;
+{
+    Barrios* barrios = [self singleObjectOfType:@"Barrios" matchingKey:@"name"
+                                  matchingValue:name];
+    
+    return barrios;
+}
+
+-(NSArray*) getCoordinatesForBarrio:(NSString*) name
+{
+    Barrios* barrios = [self singleObjectOfType:@"Barrios" matchingKey:@"name"
+                                  matchingValue:name];
+    
+    NSMutableArray *coordinates =
+        [[NSMutableArray alloc] initWithArray:[[barrios relationship] allObjects]];
+        
+    return coordinates;
+    
+}
 
 -(NSArray*) getAllPueblos
 {
@@ -72,28 +128,12 @@
 {
     NSArray *pueblos = [self getAllPueblos];
     
+    
     for(Pueblo* pueblo in pueblos)
     {
-        NSSet *barrios = [pueblo relationship];
-        [pueblo removeRelationship:barrios];
-        
         [_managedObjectContext deleteObject:pueblo];
     }
-    
-    NSArray *barrios = [self getAllBarrios];
-    
-    for(Barrios* barrio in barrios)
-    {
-        [_managedObjectContext deleteObject:barrio];
-    }
-    
-    NSArray *coordinates = [self getAllCoordinates];
-    
-    for(Coordinates* coordinate in coordinates)
-    {
-        [_managedObjectContext deleteObject:coordinate];
-    }
-    
+
     NSError *error = nil;
     if (![self.managedObjectContext save:&error]) {
     }
@@ -135,7 +175,7 @@
                     
                     coordinateEntity.x = [NSNumber numberWithDouble:[coordinates x]];
                     coordinateEntity.y = [NSNumber numberWithDouble:[coordinates y]];
-                    
+ 
                     [barrio addRelationshipObject:coordinateEntity];
                     
                 }];
@@ -155,6 +195,34 @@
         }
         
     }];
+    
+}
+
+-(void) storeUserCoordinate:(NSNumber*) xCoordinate
+              andCoordinate:(NSNumber*) yCoordinate
+                forUserName:(NSString*) name
+{
+    User* user = [self singleObjectOfType:@"User" matchingKey:@"name"
+                                  matchingValue:name];
+    
+    Coordinates *coordinates = (Coordinates *)[NSEntityDescription insertNewObjectForEntityForName:@"Coordinates"
+                                                       inManagedObjectContext:[self managedObjectContext]];
+    
+    coordinates.x = xCoordinate;
+    coordinates.y = yCoordinate;
+    
+    user.coordinates = coordinates;
+    
+    [self saveContext];
+}
+
+-(User*) storeUser
+{
+    User *user = (User *)[NSEntityDescription insertNewObjectForEntityForName:@"User"
+                                                       inManagedObjectContext:[self managedObjectContext]];
+    
+    
+    return user;
     
 }
 
@@ -277,7 +345,42 @@
     return _fetchedResultsController;
 }
 
-
+- (NSFetchedResultsController *)fetchedResultsControllerUser
+{
+    if (_fetchedResultsController != nil) {
+        return _fetchedResultsController;
+    }
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+    // Edit the entity name as appropriate.
+    NSEntityDescription *entity = [NSEntityDescription entityForName:@"User"
+                                              inManagedObjectContext:self.managedObjectContext];
+    [fetchRequest setEntity:entity];
+    
+    NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"name"
+                                                                   ascending:NO];
+    NSArray *sortDescriptors = @[sortDescriptor];
+    
+    [fetchRequest setSortDescriptors:sortDescriptors];
+    
+    // Edit the section name key path and cache name if appropriate.
+    // nil for section name key path means "no sections".
+    NSFetchedResultsController *aFetchedResultsController = [[NSFetchedResultsController alloc]
+                                                             initWithFetchRequest:fetchRequest
+                                                             managedObjectContext:self.managedObjectContext
+                                                             sectionNameKeyPath:nil cacheName:@"Master"];
+    _fetchedResultsController = aFetchedResultsController;
+    
+    NSError *error = nil;
+    if (![self.fetchedResultsController performFetch:&error]) {
+        // Replace this implementation with code to handle the error appropriately.
+        // abort() causes the application to generate a crash log and terminate. You should
+        // not use this function in a shipping application, although it may be useful during
+        // development.
+        NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
+        abort();
+    }
+    return _fetchedResultsController;
+}
 
 #pragma mark -
 #pragma mark Core Data stack
@@ -341,6 +444,24 @@
     }
     
     return _persistentStoreCoordinator;
+}
+
+- (void)saveContext{
+    NSError *error = nil;
+    NSManagedObjectContext *managedObjectContext = self.managedObjectContext;
+    if (managedObjectContext != nil)
+    {
+        if ([managedObjectContext hasChanges] && ![managedObjectContext save:&error])
+        {
+            /*
+             Replace this implementation with code to handle the error appropriately.
+             
+             abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development. If it is not possible to recover from the error, display an alert panel that instructs the user to quit the application by pressing the Home button.
+             */
+            NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
+            abort();
+        }
+    }
 }
 
 @end

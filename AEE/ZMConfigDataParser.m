@@ -61,21 +61,25 @@
             
             NSArray *geotile = [coordinates objectAtIndex:0];
             
-            ZMCoordinate *theCoordinates = [[ZMCoordinate alloc] init];
-            
             NSMutableArray *theGeotile = [[NSMutableArray alloc] init];
-            
+
             for(NSArray * eachValue in geotile) {
+                
+                ZMCoordinate *theCoordinates = [[ZMCoordinate alloc] init];
+                
                 NSString *xCoordinate = [eachValue objectAtIndex:0];
                 NSString *yCoordinate = [eachValue objectAtIndex:1];
                 
                 @try {
+                    
                     theCoordinates.x = [xCoordinate doubleValue];
                     theCoordinates.y = [yCoordinate doubleValue];
+                    
                     [theGeotile addObject:theCoordinates];
+                  
                 }
                 @catch (NSException *exception) {
-                    NSLog(@"Exception: %@", exception);
+                    NSLog(@"Exception: %@", name);
                 }
                 @finally {
                 }
