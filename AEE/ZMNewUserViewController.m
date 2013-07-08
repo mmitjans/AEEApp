@@ -7,6 +7,7 @@
 //
 
 #import "ZMNewUserViewController.h"
+#import "ZMEntityManager.h"
 
 #import "PAWActivityView.h"
 
@@ -221,6 +222,10 @@ showDialog:
 		// Success!
 		[activityView.activityIndicator stopAnimating];
 		[activityView removeFromSuperview];
+        
+        ZMEntityManager *entityManager = [ZMEntityManager sharedInstance];
+        
+        [entityManager storeUser:user.username andPassword:user.password];
         
 //		PAWWallViewController *wallViewController = [[PAWWallViewController alloc] initWithNibName:nil bundle:nil];
 //		[(UINavigationController *)self.presentingViewController pushViewController:wallViewController animated:NO];

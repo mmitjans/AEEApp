@@ -19,6 +19,9 @@
 #import "ZMUserConfigViewController.h"
 #import "ZMNewUserViewController.h"
 
+#import "ZMEntityManager.h"
+#import "User.h"
+
 #import <Parse/Parse.h>
 
 @interface ZMTableViewViewController ()
@@ -250,14 +253,51 @@
         
     } else if ([segue.identifier isEqualToString:@"settingsSegue"]) {
         
+        ZMEntityManager *entityManager = [ZMEntityManager sharedInstance];
+        
+        User *user = [entityManager getUser];
+        
+        if(user == nil) {
+            ZMNewUserViewController *newUserViewController =
+            [[ZMNewUserViewController alloc] initWithNibName:nil bundle:nil];
+            
+            [self.navigationController presentViewController:newUserViewController
+                                                    animated:YES
+                                                  completion:^{}];
+        } else {
+            [PFUser logInWithUsernameInBackground:user.username
+                                         password:user.password
+                                            block:^(PFUser *user, NSError *error) {
+
+                if (user) {
+                    
+                } else {
+                    // Didn't get a user.
+                    NSLog(@"%s didn't get a user!", __PRETTY_FUNCTION__);
+
+                    UIAlertView *alertView = nil;
+                    
+                    if (error == nil) {
+                        // the username or password is probably wrong.
+                        alertView = [[UIAlertView alloc] initWithTitle:@"Couldn’t log in:\nThe username or password were wrong." message:nil delegate:self cancelButtonTitle:nil otherButtonTitles:@"Ok", nil];
+                    } else {
+                        // Something else went horribly wrong:
+                        alertView = [[UIAlertView alloc] initWithTitle:[[error userInfo] objectForKey:@"error"] message:nil delegate:self cancelButtonTitle:nil otherButtonTitles:@"Ok", nil];
+                    }
+                    [alertView show];
+                }
+            }];
+        }
+        
         PFUser *currentUser = [PFUser currentUser];
         if (!currentUser)
         {
-            ZMNewUserViewController *newUserViewController = [[ZMNewUserViewController alloc] initWithNibName:nil bundle:nil];
-            [self.navigationController presentViewController:newUserViewController animated:YES completion:^{}];
+
         }
     }
 }
+
+
 
 - (IBAction)reportBreakdown:(id)sender {
     

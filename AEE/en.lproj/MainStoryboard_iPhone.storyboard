@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12D78" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="Eb2-JT-ZOM">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12E55" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="Eb2-JT-ZOM">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
     </dependencies>
@@ -220,7 +220,7 @@
                                             <subviews>
                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dcI-Eu-dF8">
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="142" id="Qe3-FF-NTE"/>
+                                                        <constraint firstAttribute="width" constant="182" id="Jaf-QK-43b"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
@@ -235,9 +235,10 @@
                                         </view>
                                         <constraints>
                                             <constraint firstItem="dcI-Eu-dF8" firstAttribute="centerY" secondItem="etU-gu-hBi" secondAttribute="centerY" type="default" id="IZV-MN-fTt"/>
-                                            <constraint firstItem="AAz-AC-U04" firstAttribute="top" secondItem="etU-gu-hBi" secondAttribute="top" constant="11" id="NCy-pC-9G7"/>
                                             <constraint firstItem="AAz-AC-U04" firstAttribute="leading" secondItem="etU-gu-hBi" secondAttribute="leading" constant="19" id="TcU-DK-REi"/>
-                                            <constraint firstItem="dcI-Eu-dF8" firstAttribute="leading" secondItem="etU-gu-hBi" secondAttribute="leading" constant="117" id="W6F-u4-3Ra"/>
+                                            <constraint firstAttribute="trailing" secondItem="dcI-Eu-dF8" secondAttribute="trailing" constant="20" type="default" id="Vtn-QG-YMF"/>
+                                            <constraint firstItem="dcI-Eu-dF8" firstAttribute="baseline" secondItem="AAz-AC-U04" secondAttribute="baseline" type="default" id="YCB-zo-ieu"/>
+                                            <constraint firstItem="AAz-AC-U04" firstAttribute="top" secondItem="etU-gu-hBi" secondAttribute="top" constant="11" id="b3q-3t-fpH"/>
                                         </constraints>
                                     </tableViewCell>
                                 </cells>
@@ -280,7 +281,13 @@
                             <outlet property="delegate" destination="xOx-XB-Qzi" id="xjB-9L-2Wr"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Settings" id="syi-Fn-ERk"/>
+                    <navigationItem key="navigationItem" title="Settings" id="syi-Fn-ERk">
+                        <barButtonItem key="rightBarButtonItem" title="Logout" id="hVB-Qp-5q9">
+                            <connections>
+                                <action selector="logout:" destination="xOx-XB-Qzi" id="NeG-ef-T4o"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YzY-Yi-gSr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -506,52 +513,6 @@
             <point key="canvasLocation" x="-776" y="-918"/>
         </scene>
     </scenes>
-    <classes>
-        <class className="NSLayoutConstraint" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
-        </class>
-        <class className="ZMBDownsDetailedTableViewCell" superclassName="UITableViewCell">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ZMBDownsDetailedTableViewCell.h"/>
-            <relationships>
-                <relationship kind="outlet" name="area" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="lastUpdate" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="status" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="ZMBDownsDetailedTableViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ZMBDownsDetailedTableViewController.h"/>
-        </class>
-        <class className="ZMBarriosViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ZMBarriosViewController.h"/>
-        </class>
-        <class className="ZMBreakdownsTableViewCell" superclassName="UITableViewCell">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ZMBreakdownsTableViewCell.h"/>
-            <relationships>
-                <relationship kind="outlet" name="myLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="totalOfBreakdowns" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="ZMLocationViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ZMLocationViewController.h"/>
-        </class>
-        <class className="ZMPueblosViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ZMPueblosViewController.h"/>
-        </class>
-        <class className="ZMSettingsViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ZMSettingsViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="userNameSet:"/>
-            </relationships>
-        </class>
-        <class className="ZMTableViewViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ZMTableViewViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="reportAction:"/>
-                <relationship kind="action" name="reportBreakdown:"/>
-                <relationship kind="outlet" name="reportButton" candidateClass="UIBarButtonItem"/>
-            </relationships>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

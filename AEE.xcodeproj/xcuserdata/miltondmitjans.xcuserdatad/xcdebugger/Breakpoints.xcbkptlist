@@ -56,16 +56,16 @@
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
-         shouldBeEnabled = "No"
+         shouldBeEnabled = "Yes"
          ignoreCount = "0"
          continueAfterRunningActions = "No"
-         filePath = "AEE/ZMTableViewViewController.m"
-         timestampString = "394425608.296221"
+         filePath = "AEE/ZMNewUserViewController.m"
+         timestampString = "394937351.637244"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "253"
-         endingLineNumber = "253"
-         landmarkName = "-prepareForSegue:sender:"
+         startingLineNumber = "228"
+         endingLineNumber = "228"
+         landmarkName = "-processFieldEntries"
          landmarkType = "5">
       </FileBreakpoint>
    </FileBreakpoints>

@@ -24,6 +24,8 @@
 
 -(NSArray*) getAllPueblos;
 
+-(User*) getUser;
+
 // Setter Methods
 -(void) storePueblo:(NSMutableDictionary*) pueblos;
 -(void) storeUserCoordinate:(NSNumber*) xCoordinate
@@ -31,7 +33,7 @@
                 forUserName:(NSString*) name;
 
 
--(User*) storeUser;
+-(User*) storeUser:(NSString*) userName andPassword:(NSString*) password;
 
 -(void) clearPueblos;
 

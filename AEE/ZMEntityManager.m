@@ -101,7 +101,7 @@
     if(![resultsController performFetch:&error]){
         return nil;
     }
-    return [resultsController fetchedObjects];;
+    return [resultsController fetchedObjects];
 }
 
 -(NSArray*) getAllBarrios
@@ -111,7 +111,7 @@
     if(![resultsController performFetch:&error]){
         return nil;
     }
-    return [resultsController fetchedObjects];;
+    return [resultsController fetchedObjects];
 }
 
 -(NSArray*) getAllCoordinates
@@ -121,7 +121,25 @@
     if(![resultsController performFetch:&error]){
         return nil;
     }
-    return [resultsController fetchedObjects];;
+    return [resultsController fetchedObjects];
+}
+
+-(User*) getUser
+{
+    NSFetchedResultsController* resultsController = [self fetchedResultsControllerUser];
+    NSError* error = nil;
+    
+    if(![resultsController performFetch:&error]){
+        return nil;
+    }
+    
+    NSArray* fetchedObjectArray= [resultsController fetchedObjects];
+    
+    if( [fetchedObjectArray count] > 0 ) {
+        return [fetchedObjectArray objectAtIndex:0];
+    }
+    
+    return nil;
 }
 
 -(void) clearPueblos
@@ -216,11 +234,15 @@
     [self saveContext];
 }
 
--(User*) storeUser
+-(User*) storeUser:(NSString*) userName andPassword:(NSString*) password;
 {
     User *user = (User *)[NSEntityDescription insertNewObjectForEntityForName:@"User"
                                                        inManagedObjectContext:[self managedObjectContext]];
     
+    [user setUsername:userName];
+    [user setPassword:password];
+    
+    [self saveContext];
     
     return user;
     
@@ -347,39 +369,26 @@
 
 - (NSFetchedResultsController *)fetchedResultsControllerUser
 {
-    if (_fetchedResultsController != nil) {
-        return _fetchedResultsController;
-    }
-    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
-    // Edit the entity name as appropriate.
-    NSEntityDescription *entity = [NSEntityDescription entityForName:@"User"
-                                              inManagedObjectContext:self.managedObjectContext];
-    [fetchRequest setEntity:entity];
+    NSPredicate* predicate = [NSPredicate predicateWithFormat:@"(TRUEPREDICATE)"];
     
-    NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"name"
-                                                                   ascending:NO];
-    NSArray *sortDescriptors = @[sortDescriptor];
+    NSFetchRequest* fetchRequest = [[NSFetchRequest alloc]init];
     
-    [fetchRequest setSortDescriptors:sortDescriptors];
+    [fetchRequest setEntity:[NSEntityDescription entityForName:@"User"
+                                        inManagedObjectContext:self.managedObjectContext]];
     
-    // Edit the section name key path and cache name if appropriate.
-    // nil for section name key path means "no sections".
-    NSFetchedResultsController *aFetchedResultsController = [[NSFetchedResultsController alloc]
-                                                             initWithFetchRequest:fetchRequest
-                                                             managedObjectContext:self.managedObjectContext
-                                                             sectionNameKeyPath:nil cacheName:@"Master"];
-    _fetchedResultsController = aFetchedResultsController;
+    [fetchRequest setPredicate:predicate];
     
-    NSError *error = nil;
-    if (![self.fetchedResultsController performFetch:&error]) {
-        // Replace this implementation with code to handle the error appropriately.
-        // abort() causes the application to generate a crash log and terminate. You should
-        // not use this function in a shipping application, although it may be useful during
-        // development.
-        NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
-        abort();
-    }
-    return _fetchedResultsController;
+    NSSortDescriptor* sortDescriptor =
+        [NSSortDescriptor sortDescriptorWithKey:@"username" ascending:YES];
+    
+    [fetchRequest setSortDescriptors:[NSArray arrayWithObject:sortDescriptor]];
+    
+    NSFetchedResultsController* fetchResultsController =
+        [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest
+                                             managedObjectContext:self.managedObjectContext
+                                               sectionNameKeyPath:nil cacheName:@"allUsers"];
+    
+    return fetchResultsController;
 }
 
 #pragma mark -
