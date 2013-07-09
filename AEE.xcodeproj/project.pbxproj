@@ -122,6 +122,7 @@
 		481A915B176FFE75007B6732 /* SignUpFieldBG.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SignUpFieldBG.png; sourceTree = "<group>"; };
 		481A916917700853007B6732 /* Login.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Login.png; sourceTree = "<group>"; };
 		481A916B17700AA9007B6732 /* barrios.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = barrios.json; sourceTree = "<group>"; };
+		482E7BFC178BAB4B006E4D81 /* AEE.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = AEE.entitlements; sourceTree = "<group>"; };
 		488107C0177680BB00B9C839 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		488107C21777624F00B9C839 /* Barrios.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Barrios.h; sourceTree = "<group>"; };
 		488107C31777624F00B9C839 /* Barrios.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Barrios.m; sourceTree = "<group>"; };
@@ -373,6 +374,7 @@
 		48EA93BC1767EC5C00A91B5C /* AEE */ = {
 			isa = PBXGroup;
 			children = (
+				482E7BFC178BAB4B006E4D81 /* AEE.entitlements */,
 				48FAA94D178273DD001F8A3F /* PAWActivityView.h */,
 				48FAA94E178273DE001F8A3F /* PAWActivityView.m */,
 				488107E0177A719E00B9C839 /* Source */,
@@ -413,8 +415,8 @@
 				488107D6177952A600B9C839 /* ZMMapViewController.h */,
 				488107D7177952A700B9C839 /* ZMMapViewController.m */,
 				488107D8177952A700B9C839 /* ZMMapViewController.xib */,
-				48FAA924177CF2DF001F8A3F /* ZMGeocoder.h */,
 				48FAA925177CF2DF001F8A3F /* ZMGeocoder.m */,
+				48FAA924177CF2DF001F8A3F /* ZMGeocoder.h */,
 				48FAA927177E8D39001F8A3F /* ZMPointAnnotation.h */,
 				48FAA928177E8D39001F8A3F /* ZMPointAnnotation.m */,
 				48FAA939177E9B42001F8A3F /* ZMSettingsViewController.h */,
@@ -771,6 +773,7 @@
 		48EA93EF1767EC5C00A91B5C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = AEE/AEE.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Milton Mitjans (ANLCN4ZK6G)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Milton Mitjans (ANLCN4ZK6G)";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -792,6 +795,7 @@
 		48EA93F01767EC5C00A91B5C /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = AEE/AEE.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Milton Mitjans (ANLCN4ZK6G)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Milton Mitjans (ANLCN4ZK6G)";
 				FRAMEWORK_SEARCH_PATHS = (

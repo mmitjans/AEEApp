@@ -18,6 +18,7 @@
 
 #import "ZMUserConfigViewController.h"
 #import "ZMNewUserViewController.h"
+#import "ZMSettingsViewController.h"
 
 #import "ZMEntityManager.h"
 #import "User.h"
@@ -265,35 +266,58 @@
                                                     animated:YES
                                                   completion:^{}];
         } else {
-            [PFUser logInWithUsernameInBackground:user.username
-                                         password:user.password
-                                            block:^(PFUser *user, NSError *error) {
-
+            
+            // sets the username and password
+            ZMSettingsViewController *settingsController = segue.destinationViewController;
+            
+            [settingsController setUsername:[user username]];
+            [settingsController setPassword:[user password]];
+            
+            // First check if already logged in
+            PFUser *currentUser = [PFUser currentUser];
+            
+            if (!currentUser)
+            {
+                [PFUser logInWithUsernameInBackground:user.username
+                                             password:user.password
+                                                block:^(PFUser *user, NSError *error) {
+                                                    
                 if (user) {
-                    
-                } else {
-                    // Didn't get a user.
-                    NSLog(@"%s didn't get a user!", __PRETTY_FUNCTION__);
-
-                    UIAlertView *alertView = nil;
-                    
-                    if (error == nil) {
-                        // the username or password is probably wrong.
-                        alertView = [[UIAlertView alloc] initWithTitle:@"Couldn’t log in:\nThe username or password were wrong." message:nil delegate:self cancelButtonTitle:nil otherButtonTitles:@"Ok", nil];
-                    } else {
-                        // Something else went horribly wrong:
-                        alertView = [[UIAlertView alloc] initWithTitle:[[error userInfo] objectForKey:@"error"] message:nil delegate:self cancelButtonTitle:nil otherButtonTitles:@"Ok", nil];
-                    }
-                    [alertView show];
-                }
-            }];
+                                                        
+                 } else {
+                     
+                     // Didn't get a user.
+                     NSLog(@"%s didn't get a user!", __PRETTY_FUNCTION__);
+                                                        
+                     UIAlertView *alertView = nil;
+                                                        
+                     if (error == nil) {
+                         
+                         // the username or password is probably wrong.
+                         alertView = [[UIAlertView alloc] initWithTitle:@"Couldn’t log in:\nThe username or password were wrong."
+                                                                message:nil
+                                                               delegate:self
+                                                      cancelButtonTitle:nil
+                                                      otherButtonTitles:@"Ok", nil];
+                     } else {
+                         
+                         // Something else went horribly wrong:
+                         alertView = [[UIAlertView alloc] initWithTitle:[[error userInfo]
+                                                                         objectForKey:@"error"]
+                                                                message:nil
+                                                               delegate:self
+                                                      cancelButtonTitle:nil
+                                                      otherButtonTitles:@"Ok", nil];
+                     }
+                     
+                        [alertView show];
+                     }
+                }];
+            }
+            
+            
         }
         
-        PFUser *currentUser = [PFUser currentUser];
-        if (!currentUser)
-        {
-
-        }
     }
 }
 

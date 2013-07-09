@@ -54,6 +54,7 @@
 {
     self.userCoordinates = [newLocation coordinate];
     
+    [locationManager stopUpdatingLocation];
 }
 
 - (void)didReceiveMemoryWarning

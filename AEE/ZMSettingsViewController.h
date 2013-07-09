@@ -10,8 +10,13 @@
 
 @interface ZMSettingsViewController : UITableViewController
 {
-UITextField *loginId;
-UITextField *password ;
 }
+
+@property (weak, nonatomic) IBOutlet UITextField *usernameField;
+@property (weak, nonatomic) IBOutlet UITextField *passwordField;
+
+@property (nonatomic, strong) NSString *username;
+@property (nonatomic, strong) NSString *password;
+
 @end
 

@@ -15,6 +15,11 @@
 
 @implementation ZMSettingsViewController
 
+@synthesize usernameField;
+@synthesize passwordField;
+@synthesize username;
+@synthesize password;
+
 - (id)initWithStyle:(UITableViewStyle)style
 {
     self = [super initWithStyle:style];
@@ -27,6 +32,13 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    [usernameField setText:username];
+    [passwordField setText:password];
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
 }
 
 - (void)didReceiveMemoryWarning

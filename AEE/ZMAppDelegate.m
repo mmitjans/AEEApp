@@ -46,6 +46,12 @@
         [entityManager storePueblo:pueblos];
     }
     
+    // create a standardUserDefaults variable
+    NSUserDefaults * standardUserDefaults = [NSUserDefaults standardUserDefaults];
+    
+    // saving an NSString
+    [standardUserDefaults setObject:@"mystring" forKey:@"string"];
+    
     return YES;
 }
 							
