@@ -7,6 +7,7 @@
 //
 
 #import "ZMLocationViewController.h"
+#import "MBProgressHUD.h"
 
 @interface ZMLocationViewController ()
 
@@ -15,6 +16,7 @@
 @implementation ZMLocationViewController
 {
     CLLocationManager *locationManager;
+    MBProgressHUD *activityView;
 }
 
 @synthesize userCoordinates;
@@ -31,13 +33,21 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	
-    locationManager = [[CLLocationManager alloc] init];
     
-    locationManager.delegate = self;
+    activityView = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, 0.01 * NSEC_PER_SEC);
+    
+    dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+        
+        locationManager = [[CLLocationManager alloc] init];
+        
+        locationManager.delegate = self;
         locationManager.desiredAccuracy = kCLLocationAccuracyBest;
         
         [locationManager startUpdatingLocation];
+        
+    });
+
 }
 
 - (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error
@@ -53,6 +63,8 @@
            fromLocation:(CLLocation *)oldLocation
 {
     self.userCoordinates = [newLocation coordinate];
+    
+    [MBProgressHUD hideHUDForView:self.view animated:YES];
     
     [locationManager stopUpdatingLocation];
 }

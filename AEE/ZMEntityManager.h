@@ -25,6 +25,7 @@
 -(NSArray*) getAllPueblos;
 
 -(User*) getUser;
+-(void) clearUser;
 
 // Setter Methods
 -(void) storePueblo:(NSMutableDictionary*) pueblos;

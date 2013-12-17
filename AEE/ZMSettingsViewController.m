@@ -8,6 +8,7 @@
 
 #import "ZMSettingsViewController.h"
 #import <Parse/Parse.h>
+#import "ZMEntityManager.h"
 
 @interface ZMSettingsViewController ()
 
@@ -53,6 +54,13 @@
 - (IBAction)logout:(id)sender {
     
     [PFUser logOut];
+    
+    // clears the text fields
+    self.passwordField.text = @"";
+    
+    ZMEntityManager *entityManager = [ZMEntityManager sharedInstance];
+    
+    [entityManager clearUser];
     
 }
 

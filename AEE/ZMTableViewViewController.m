@@ -23,6 +23,8 @@
 #import "ZMEntityManager.h"
 #import "User.h"
 
+#import "ZMParseHelper.h"
+
 #import <Parse/Parse.h>
 
 @interface ZMTableViewViewController ()
@@ -249,8 +251,6 @@
         
         ax22_BreakdownSummary *summary = [self.breakDowns objectAtIndex:indexPath.row];
         
-        
-        
         destViewController.townName = [self.breakDownsDetails objectForKey:summary.r1TownOrCity];
         
     } else if ([segue.identifier isEqualToString:@"settingsSegue"]) {
@@ -274,55 +274,14 @@
             [settingsController setUsername:[user username]];
             [settingsController setPassword:[user password]];
             
-            // First check if already logged in
-            PFUser *currentUser = [PFUser currentUser];
-            
-            if (!currentUser)
-            {
-                [PFUser logInWithUsernameInBackground:user.username
-                                             password:user.password
-                                                block:^(PFUser *user, NSError *error) {
-                                                    
-                if (user) {
-                                                        
-                 } else {
-                     
-                     // Didn't get a user.
-                     NSLog(@"%s didn't get a user!", __PRETTY_FUNCTION__);
-                                                        
-                     UIAlertView *alertView = nil;
-                                                        
-                     if (error == nil) {
-                         
-                         // the username or password is probably wrong.
-                         alertView = [[UIAlertView alloc] initWithTitle:@"Couldn’t log in:\nThe username or password were wrong."
-                                                                message:nil
-                                                               delegate:self
-                                                      cancelButtonTitle:nil
-                                                      otherButtonTitles:@"Ok", nil];
-                     } else {
-                         
-                         // Something else went horribly wrong:
-                         alertView = [[UIAlertView alloc] initWithTitle:[[error userInfo]
-                                                                         objectForKey:@"error"]
-                                                                message:nil
-                                                               delegate:self
-                                                      cancelButtonTitle:nil
-                                                      otherButtonTitles:@"Ok", nil];
-                     }
-                     
-                        [alertView show];
-                     }
-                }];
-            }
-            
+            [ZMParseHelper logInWithUsername:user.username andPassword:user.password andParseBlock:^(PFUser *user, NSError *error) {
+                
+            }];
             
         }
         
     }
 }
-
-
 
 - (IBAction)reportBreakdown:(id)sender {
     

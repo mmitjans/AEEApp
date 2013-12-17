@@ -248,6 +248,30 @@
     
 }
 
+-(void) clearUser
+{
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+    
+    NSEntityDescription *entity =
+        [NSEntityDescription entityForName:@"User"
+                    inManagedObjectContext:self.managedObjectContext];
+    
+    [fetchRequest setEntity:entity];
+    
+    NSArray* users = [self.managedObjectContext executeFetchRequest:fetchRequest error:nil];
+
+    for (NSManagedObject *user in users) {
+        
+        [self.managedObjectContext deleteObject:user];
+    }
+    
+    NSError *error = nil;
+    if (![self.managedObjectContext save:&error]) {
+        
+        // TODO: Delete user
+    }
+}
+
 /**
  Returns the URL to the application's Documents directory.
  */

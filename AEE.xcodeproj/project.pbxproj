@@ -22,6 +22,11 @@
 		481A9165176FFE75007B6732 /* SignUpFieldBG.png in Resources */ = {isa = PBXBuildFile; fileRef = 481A915B176FFE75007B6732 /* SignUpFieldBG.png */; };
 		481A916A17700853007B6732 /* Login.png in Resources */ = {isa = PBXBuildFile; fileRef = 481A916917700853007B6732 /* Login.png */; };
 		481A916C17700AA9007B6732 /* barrios.json in Resources */ = {isa = PBXBuildFile; fileRef = 481A916B17700AA9007B6732 /* barrios.json */; };
+		482FDCAE185E6B2200A033DD /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 482FDCAD185E6B2200A033DD /* Images.xcassets */; };
+		482FDCB3185E6C6400A033DD /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 482FDCB2185E6C6400A033DD /* MBProgressHUD.m */; };
+		486FE898185E7AA200E7DF63 /* MHTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 486FE897185E7AA200E7DF63 /* MHTextField.m */; };
+		486FE89B185E897E00E7DF63 /* ZMParseHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 486FE89A185E897E00E7DF63 /* ZMParseHelper.m */; };
+		486FE89C185E897E00E7DF63 /* ZMParseHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 486FE89A185E897E00E7DF63 /* ZMParseHelper.m */; };
 		488107C1177680BB00B9C839 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 488107BF177680BB00B9C839 /* Model.xcdatamodeld */; };
 		488107C41777624F00B9C839 /* Barrios.m in Sources */ = {isa = PBXBuildFile; fileRef = 488107C31777624F00B9C839 /* Barrios.m */; };
 		488107C71777627600B9C839 /* Coordinates.m in Sources */ = {isa = PBXBuildFile; fileRef = 488107C61777627600B9C839 /* Coordinates.m */; };
@@ -123,6 +128,13 @@
 		481A916917700853007B6732 /* Login.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Login.png; sourceTree = "<group>"; };
 		481A916B17700AA9007B6732 /* barrios.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = barrios.json; sourceTree = "<group>"; };
 		482E7BFC178BAB4B006E4D81 /* AEE.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = AEE.entitlements; sourceTree = "<group>"; };
+		482FDCAD185E6B2200A033DD /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		482FDCB1185E6C6400A033DD /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
+		482FDCB2185E6C6400A033DD /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
+		486FE896185E7AA200E7DF63 /* MHTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MHTextField.h; sourceTree = "<group>"; };
+		486FE897185E7AA200E7DF63 /* MHTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MHTextField.m; sourceTree = "<group>"; };
+		486FE899185E897E00E7DF63 /* ZMParseHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZMParseHelper.h; sourceTree = "<group>"; };
+		486FE89A185E897E00E7DF63 /* ZMParseHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZMParseHelper.m; sourceTree = "<group>"; };
 		488107C0177680BB00B9C839 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		488107C21777624F00B9C839 /* Barrios.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Barrios.h; sourceTree = "<group>"; };
 		488107C31777624F00B9C839 /* Barrios.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Barrios.m; sourceTree = "<group>"; };
@@ -273,6 +285,8 @@
 				481A914C176FFCC2007B6732 /* MyLogInViewController.m */,
 				481A914D176FFCC2007B6732 /* MySignUpViewController.h */,
 				481A914E176FFCC2007B6732 /* MySignUpViewController.m */,
+				486FE899185E897E00E7DF63 /* ZMParseHelper.h */,
+				486FE89A185E897E00E7DF63 /* ZMParseHelper.m */,
 			);
 			name = Login;
 			sourceTree = "<group>";
@@ -291,6 +305,33 @@
 				481A915B176FFE75007B6732 /* SignUpFieldBG.png */,
 			);
 			name = Assets;
+			sourceTree = "<group>";
+		};
+		482FDCAF185E6C4E00A033DD /* APIs */ = {
+			isa = PBXGroup;
+			children = (
+				486FE895185E7A8C00E7DF63 /* MHTextField */,
+				482FDCB0185E6C5800A033DD /* MBProgressHUD */,
+			);
+			name = APIs;
+			sourceTree = "<group>";
+		};
+		482FDCB0185E6C5800A033DD /* MBProgressHUD */ = {
+			isa = PBXGroup;
+			children = (
+				482FDCB1185E6C6400A033DD /* MBProgressHUD.h */,
+				482FDCB2185E6C6400A033DD /* MBProgressHUD.m */,
+			);
+			name = MBProgressHUD;
+			sourceTree = "<group>";
+		};
+		486FE895185E7A8C00E7DF63 /* MHTextField */ = {
+			isa = PBXGroup;
+			children = (
+				486FE896185E7AA200E7DF63 /* MHTextField.h */,
+				486FE897185E7AA200E7DF63 /* MHTextField.m */,
+			);
+			name = MHTextField;
 			sourceTree = "<group>";
 		};
 		488107CC177762BC00B9C839 /* DataModel */ = {
@@ -374,6 +415,7 @@
 		48EA93BC1767EC5C00A91B5C /* AEE */ = {
 			isa = PBXGroup;
 			children = (
+				482FDCAF185E6C4E00A033DD /* APIs */,
 				482E7BFC178BAB4B006E4D81 /* AEE.entitlements */,
 				48FAA94D178273DD001F8A3F /* PAWActivityView.h */,
 				48FAA94E178273DE001F8A3F /* PAWActivityView.m */,
@@ -430,6 +472,7 @@
 				48FAA94817826BCB001F8A3F /* ZMNewUserViewController.h */,
 				48FAA94917826BCC001F8A3F /* ZMNewUserViewController.m */,
 				48FAA94A17826BCD001F8A3F /* ZMNewUserViewController.xib */,
+				482FDCAD185E6B2200A033DD /* Images.xcassets */,
 			);
 			path = AEE;
 			sourceTree = "<group>";
@@ -575,6 +618,7 @@
 				481A9164176FFE75007B6732 /* SignUpDown.png in Resources */,
 				481A9165176FFE75007B6732 /* SignUpFieldBG.png in Resources */,
 				481A916A17700853007B6732 /* Login.png in Resources */,
+				482FDCAE185E6B2200A033DD /* Images.xcassets in Resources */,
 				481A916C17700AA9007B6732 /* barrios.json in Resources */,
 				488107DA177952A700B9C839 /* ZMMapViewController.xib in Resources */,
 				48FAA94C17826BCE001F8A3F /* ZMNewUserViewController.xib in Resources */,
@@ -625,6 +669,7 @@
 				48EA940A1767EF3C00A91B5C /* USGlobals.m in Sources */,
 				48EA940B1767EF3C00A91B5C /* xsd.m in Sources */,
 				48EA940E1769359A00A91B5C /* ZMClientProcessor.m in Sources */,
+				482FDCB3185E6C6400A033DD /* MBProgressHUD.m in Sources */,
 				48EA941117693AD700A91B5C /* ZMTableViewViewController.m in Sources */,
 				48EA941417693EE700A91B5C /* ZMBreakdownsTableViewCell.m in Sources */,
 				48EA941A1769524400A91B5C /* ZMBDownsDetailedTableViewController.m in Sources */,
@@ -638,6 +683,8 @@
 				4817D7961772A4A60056FE9A /* ZMPueblo.m in Sources */,
 				48BC73491775481F00D0D6E3 /* ZMBarrio.m in Sources */,
 				488107C1177680BB00B9C839 /* Model.xcdatamodeld in Sources */,
+				486FE898185E7AA200E7DF63 /* MHTextField.m in Sources */,
+				486FE89B185E897E00E7DF63 /* ZMParseHelper.m in Sources */,
 				488107C41777624F00B9C839 /* Barrios.m in Sources */,
 				488107C71777627600B9C839 /* Coordinates.m in Sources */,
 				488107CA1777629200B9C839 /* Pueblo.m in Sources */,
@@ -660,6 +707,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				486FE89C185E897E00E7DF63 /* ZMParseHelper.m in Sources */,
 				48EA93EB1767EC5C00A91B5C /* AEETests.m in Sources */,
 				488107E3177A73BF00B9C839 /* UIViewController+KNSemiModal.m in Sources */,
 				48FAA950178273DF001F8A3F /* PAWActivityView.m in Sources */,
@@ -783,6 +831,8 @@
 		48EA93EF1767EC5C00A91B5C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_ENTITLEMENTS = AEE/AEE.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Milton Mitjans (ANLCN4ZK6G)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Milton Mitjans (ANLCN4ZK6G)";
@@ -805,6 +855,8 @@
 		48EA93F01767EC5C00A91B5C /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_ENTITLEMENTS = AEE/AEE.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Milton Mitjans (ANLCN4ZK6G)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Milton Mitjans (ANLCN4ZK6G)";

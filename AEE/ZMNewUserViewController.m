@@ -13,6 +13,8 @@
 
 #import <Parse/Parse.h>
 
+#import "ZMParseHelper.h"
+
 @interface ZMNewUserViewController ()
 - (void)processFieldEntries;
 - (void)textInputChanged:(NSNotification *)note;
@@ -50,19 +52,25 @@
 	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(textInputChanged:) name:UITextFieldTextDidChangeNotification object:passwordAgainField];
     
 	doneButton.enabled = NO;
+    
+    [usernameField setRequired:YES];
+    [usernameField setEmailField:YES];
 }
 
 - (void)viewDidUnload {
+    
     [super viewDidUnload];
     
 	[[NSNotificationCenter defaultCenter] removeObserver:self name:UITextFieldTextDidChangeNotification object:usernameField];
 	[[NSNotificationCenter defaultCenter] removeObserver:self name:UITextFieldTextDidChangeNotification object:passwordField];
 	[[NSNotificationCenter defaultCenter] removeObserver:self name:UITextFieldTextDidChangeNotification object:passwordAgainField];
     // Release any retained subviews of the main view.
+    
+
 }
 
 - (void)viewWillAppear:(BOOL)animated {
-	[usernameField becomeFirstResponder];
+	//[usernameField becomeFirstResponder];
 	[super viewWillAppear:animated];
 }
 
@@ -113,18 +121,98 @@
 	doneButton.enabled = [self shouldEnableDoneButton];
 }
 
-- (IBAction)cancel:(id)sender {
+#pragma mark User push button's
+- (IBAction)cancel:(id)sender
+{
     [self.presentingViewController dismissViewControllerAnimated:YES completion:nil];
 }
 
-- (IBAction)done:(id)sender {
+- (IBAction)done:(id)sender
+{
     [usernameField resignFirstResponder];
 	[passwordField resignFirstResponder];
 	[passwordAgainField resignFirstResponder];
 	[self processFieldEntries];
 }
 
+- (IBAction)signIn:(id)sender
+{
+    __weak ZMNewUserViewController *weakSelf = self;
+    
+    [ZMParseHelper logInWithUsername:usernameField.text
+                         andPassword:passwordField.text
+                       andParseBlock:^(PFUser *user, NSError *error) {
+                           
+                           if([user isAuthenticated])
+                           {
+                               [weakSelf dismissViewControllerAnimated:YES completion:^{
+                                   
+                               }];
+                           }
+                           
+
+    }];
+}
+
+- (IBAction)registerUser:(id)sender
+{
+    
+    [passwordAgainField setHidden:NO];
+    
+    [UIView animateWithDuration:1 delay:0.1
+                        options:UIViewAnimationOptionLayoutSubviews
+                     animations:^{
+        self.signInButton.alpha = 0.0;
+                     } completion:^(BOOL finished) {
+                         [self.realRegisterButton setHidden:NO];
+                         // TODO: self.realRegisterButton.alpha = 1.0;
+                         
+                         self.registerButton.alpha = 0.0;
+                         [self.registerButton setHidden:YES];
+                     }];
+
+    
+}
+
+- (IBAction)realRegisterHit:(id)sender
+{
+    UIAlertView *alertView =
+    [[UIAlertView alloc] initWithTitle:@"Success"
+                               message:@"Do something interesting!"
+                              delegate:nil
+                     cancelButtonTitle:nil
+                     otherButtonTitles:@"Ok", nil];
+    
+    if (![self validateInputInView:self.view]){
+        
+        [alertView setMessage:@"Invalid information please review and try again!"];
+        [alertView setTitle:@"Login Failed"];
+    }
+    else
+    {
+        [self processFieldEntries];
+    }
+    
+    [alertView show];
+}
+
 #pragma mark - Private methods:
+
+- (BOOL)validateInputInView:(UIView*)view
+{
+    for(UIView *subView in view.subviews){
+        if ([subView isKindOfClass:[UIScrollView class]])
+            return [self validateInputInView:subView];
+        
+        if ([subView isKindOfClass:[MHTextField class]]){
+            if (![(MHTextField*)subView validate]){
+                return NO;
+            }
+        }
+    }
+    
+    return YES;
+}
 
 #pragma mark Field validation
 
@@ -229,7 +317,9 @@ showDialog:
         
 //		PAWWallViewController *wallViewController = [[PAWWallViewController alloc] initWithNibName:nil bundle:nil];
 //		[(UINavigationController *)self.presentingViewController pushViewController:wallViewController animated:NO];
-//		[self.presentingViewController dismissModalViewControllerAnimated:YES];
+		[self.presentingViewController dismissViewControllerAnimated:YES completion:^{
+            
+        }];
 	}];
 
 }
