@@ -10,7 +10,9 @@
 
 #import "MHTextField.h"
 
-@interface ZMNewUserViewController : UIViewController
+@class PFUser;
+
+@interface ZMNewUserViewController : UIViewController<UITextFieldDelegate>
 
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *doneButton;
 
@@ -26,4 +28,7 @@
 
 @property (weak, nonatomic) IBOutlet UIButton *realRegisterButton;
 @property (weak, nonatomic) IBOutlet UIButton *registerButton;
+
+@property (strong, nonatomic, readonly) PFUser* authenticatedUser;
+
 @end

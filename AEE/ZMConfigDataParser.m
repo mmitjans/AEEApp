@@ -28,7 +28,7 @@
     
     NSString *jsonString = [[NSString alloc] initWithContentsOfFile:jsonFilePath encoding:NSUTF8StringEncoding error: NULL];
     
-    NSData* data = [jsonString dataUsingEncoding:NSUTF8StringEncoding];\
+    NSData* data = [jsonString dataUsingEncoding:NSUTF8StringEncoding];
     
     NSError *error = NULL;
     

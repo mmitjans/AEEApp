@@ -10,7 +10,7 @@
 #import "MBProgressHUD.h"
 
 @interface ZMLocationViewController ()
-
+@property(nonatomic, strong) CLGeocoder *geoCoder;
 @end
 
 @implementation ZMLocationViewController
@@ -25,7 +25,7 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        // Custom initialization
+        self.geoCoder = [[CLGeocoder alloc] init];
     }
     return self;
 }
@@ -59,14 +59,32 @@
 }
 
 - (void)locationManager:(CLLocationManager *)manager
-    didUpdateToLocation:(CLLocation *)newLocation
-           fromLocation:(CLLocation *)oldLocation
+     didUpdateLocations:(NSArray *)locations
 {
-    self.userCoordinates = [newLocation coordinate];
+    CLLocation *currentLocation = [locations objectAtIndex:0];
+    
+    [locationManager stopUpdatingLocation];
+    
+    self.userCoordinates = [currentLocation coordinate];
+  
+    NSLog(@"Detected Location : %f, %f", currentLocation.coordinate.latitude, currentLocation.coordinate.longitude);
+    self.geoCoder = [[CLGeocoder alloc] init];
+    
+    [self.geoCoder reverseGeocodeLocation:currentLocation
+                        completionHandler:^(NSArray *placemarks, NSError *error) {
+                            if (error){
+                                NSLog(@"Geocode failed with error: %@", error);
+                                return;
+                            }
+                            CLPlacemark *placemark = [placemarks objectAtIndex:0];
+                            
+                            CLCircularRegion *clRegion = [placemark region];
+                            NSLog(@"placemark.ISOcountryCode %@",placemark.ISOcountryCode);
+    }];
     
     [MBProgressHUD hideHUDForView:self.view animated:YES];
     
-    [locationManager stopUpdatingLocation];
+    
 }
 
 - (void)didReceiveMemoryWarning

@@ -16,7 +16,6 @@
 
 #import "ZMGradientView.h"
 
-#import "ZMUserConfigViewController.h"
 #import "ZMNewUserViewController.h"
 #import "ZMSettingsViewController.h"
 
@@ -66,51 +65,9 @@
     [self.refreshControl addTarget:self
                             action:@selector(handleRefresh:)
                   forControlEvents:UIControlEventValueChanged];
-    
-    ZMUserConfigViewController *config = [[ZMUserConfigViewController alloc] init];
-    
-    //[self presentViewController:config animated:YES completion:NULL];
-    
     self.loaded = NO;
     
-//    self.frame = self.view.frame;
-//    
-//    self.container = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 110, 30)];
-//    self.activityLabel = [[UILabel alloc] init];
-//    self.activityLabel.text = NSLocalizedString(@"Loading", @"string1");
-//    self.activityLabel.textColor = [UIColor lightGrayColor];
-//    self.activityLabel.font = [UIFont boldSystemFontOfSize:17];
-//    [self.container addSubview:self.activityLabel];
-//    self.activityLabel.frame = CGRectMake(0, 3, 70, 25);
-//    
-//    self.activityIndicator = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
-//    [self.container addSubview:self.activityIndicator];
-//    self.activityIndicator.frame = CGRectMake(80, 0, 30, 30);
-//    
-//    [self.view addSubview:self.container];
-//    self.container.center = CGPointMake(self.frame.size.width/2, self.frame.size.height/2);
-//    self.view.backgroundColor = [UIColor whiteColor];
-//    
-//    [self.activityIndicator startAnimating];
-//    
-//    [self processData];
-//    
-//    //dispatch_async(dispatch_get_main_queue(), ^{
-//    
-//    [self.tableView reloadData];
-//    
-//    [self.activityIndicator stopAnimating];
-//    
-//    [self.container removeFromSuperview];
-    
     [self processData];
-    
-    //});
-    
-
- 
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
 - (void) handleRefresh:(id)paramSender{
@@ -154,12 +111,6 @@
     [self.tableView reloadData];
 }
 
-// Settings button
-- (IBAction)reportAction:(id)sender
-{
-    [PFUser logOut];
-}
-
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
@@ -171,7 +122,6 @@
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
     return 1;
-    
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -181,7 +131,6 @@
     } else {
         return 0;
     }
-    
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -199,55 +148,49 @@
     cell.totalOfBreakdowns.text = totalBreakdoown;
     
     cell.backgroundView = [[ZMGradientView alloc] init];
-    
-    // Configure the cell...
-    
+
     return cell;
 }
-
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
+- (IBAction)setSettings:(id)sender
 {
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
+    __block ZMEntityManager *entityManager = [ZMEntityManager sharedInstance];
+    
+    User *user = [entityManager getUser];
+    
+    if(user == nil) {
+        __block ZMNewUserViewController *newUserViewController =
+        [[ZMNewUserViewController alloc] initWithNibName:@"ZMNewUserViewController" bundle:nil];
+        
+        [self.navigationController presentViewController:newUserViewController
+                                                animated:YES
+                                              completion:^{
+                                              }];
+    } else {
+        
+        // sets the username and password
+        ZMSettingsViewController *settingsController =
+            [[ZMSettingsViewController alloc] initWithNibName:@"ZMSettingsViewController" bundle:nil];
+        
+        [settingsController setUsername:[user username]];
+        [settingsController setPassword:[user password]];
+        
+        [ZMParseHelper logInWithUsername:user.username
+                             andPassword:user.password
+                           andParseBlock:^(PFUser *user, NSError *error) {
+                               
+                           }];
+        
+    }
 }
-*/
 
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    }   
-    else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
-{
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
-
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    if ([segue.identifier isEqualToString:@"detailBreakdown"]) {
+    if ([segue.identifier isEqualToString:@"detailBreakdown"])
+    {
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-        ZMBDownsDetailedTableViewController *destViewController = segue.destinationViewController;
+        
+        ZMBDownsDetailedTableViewController *destViewController =
+            segue.destinationViewController;
         
         ax22_BreakdownSummary *summary = [self.breakDowns objectAtIndex:indexPath.row];
         
@@ -255,30 +198,7 @@
         
     } else if ([segue.identifier isEqualToString:@"settingsSegue"]) {
         
-        ZMEntityManager *entityManager = [ZMEntityManager sharedInstance];
         
-        User *user = [entityManager getUser];
-        
-        if(user == nil) {
-            ZMNewUserViewController *newUserViewController =
-            [[ZMNewUserViewController alloc] initWithNibName:nil bundle:nil];
-            
-            [self.navigationController presentViewController:newUserViewController
-                                                    animated:YES
-                                                  completion:^{}];
-        } else {
-            
-            // sets the username and password
-            ZMSettingsViewController *settingsController = segue.destinationViewController;
-            
-            [settingsController setUsername:[user username]];
-            [settingsController setPassword:[user password]];
-            
-            [ZMParseHelper logInWithUsername:user.username andPassword:user.password andParseBlock:^(PFUser *user, NSError *error) {
-                
-            }];
-            
-        }
         
     }
 }

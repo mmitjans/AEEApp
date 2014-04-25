@@ -10,8 +10,6 @@
 
 #import <Parse/Parse.h>
 
-#import "ZMUserConfigViewController.h"
-
 #import "ZMConfigDataParser.h"
 #import "ZMPueblo.h"
 
@@ -28,8 +26,33 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+
     [Parse setApplicationId:@"Ps3Z5KuhwrExyxK5P2JxwIVa0gf42obU1UnUv6rN"
                   clientKey:@"d0oDmDkFt8x5LqhtAlHUS8zNzNk1yE7T2IRrg3LA"];
+    
+    [PFFacebookUtils initializeFacebook];
+    
+    
+    [[UIApplication sharedApplication] registerForRemoteNotificationTypes:UIRemoteNotificationTypeAlert |
+        UIRemoteNotificationTypeBadge | UIRemoteNotificationTypeSound];
+    
+    // Get notified when a user changes a setting
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(handleSettingsChanged:)
+                                                 name:NSUserDefaultsDidChangeNotification
+                                               object:nil];
+    
+    if(launchOptions[UIApplicationLaunchOptionsLocalNotificationKey] != nil)
+    {
+        UILocalNotification *notification =
+            launchOptions[UIApplicationLaunchOptionsLocalNotificationKey];
+        [self application:application didReceiveLocalNotification:notification];
+    }
+    else
+    {
+        [self scheduleNotification];
+    
+    }
     
     [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
     
@@ -54,6 +77,10 @@
     
     return YES;
 }
+
+- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation {
+    return [PFFacebookUtils handleOpenURL:url];
+}
 							
 - (void)applicationWillResignActive:(UIApplication *)application
 {
@@ -74,14 +101,62 @@
 
 - (void)applicationDidBecomeActive:(UIApplication *)application
 {
-    // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
-
-
+    [FBSession.activeSession handleDidBecomeActive];
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application
 {
-    // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+    [FBSession.activeSession close];
+    
+    // Removes the default setting notification
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
+
+-(void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken
+{
+    // Store the deviceToken in the current installation and save it to Parse.
+    PFInstallation *currentInstallation = [PFInstallation currentInstallation];
+    [currentInstallation setDeviceTokenFromData:deviceToken];
+    [currentInstallation saveInBackground];
+}
+
+-(void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo
+{
+    [PFPush handlePush:userInfo];
+}
+
+-(void)application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(NSError *)error
+{
+    NSError *theError = error;
+}
+
+-(void) application:(UIApplication *)application didReceiveLocalNotification:(UILocalNotification *)notification
+{
+    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Test"
+                                                        message:@"Wakup"
+                                                       delegate:nil
+                                              cancelButtonTitle:@"Ok"
+                                              otherButtonTitles:nil];
+    
+    [alertView show];
+}
+
+-(void)scheduleNotification
+{/*
+    UILocalNotification *localNofitication = [[UILocalNotification alloc] init];
+    
+    localNofitication.fireDate = [NSDate dateWithTimeIntervalSinceNow:8];
+    localNofitication.timeZone = [[NSCalendar currentCalendar] timeZone];
+    localNofitication.alertBody = NSLocalizedString(@"Testing", nil);
+    localNofitication.hasAction = YES;
+    localNofitication.alertAction = NSLocalizedString(@"View", nil);
+    
+    [[UIApplication sharedApplication] scheduleLocalNotification:localNofitication];*/
+}
+
+-(void)handleSettingsChanged:(NSNotification*)notification
+{
+    
 }
 
 

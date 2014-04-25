@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>html</key>
+	<string>&lt;html lang=&quot;en-us&quot; xmlns:htmldb=&quot;http://htmldb.oracle.com&quot;&gt;
+&lt;head&gt;
+&lt;title&gt;FORMULARIO&lt;/title&gt;
+&lt;link rel=&quot;stylesheet&quot; href=&quot;/i/themes/theme_14/theme_3_1.css&quot; type=&quot;text/css&quot; /&gt;
+
+&lt;script src=&quot;/i/javascript/apex_ns_3_1.js&quot; type=&quot;text/javascript&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;/i/javascript/apex_3_1.js&quot; type=&quot;text/javascript&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;/i/javascript/apex_get_3_1.js&quot; type=&quot;text/javascript&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;/i/javascript/apex_builder.js&quot; type=&quot;text/javascript&quot;&gt;&lt;/script&gt;
+&lt;script type=&quot;text/javascript&quot;&gt;
+&lt;!--
+/*Global JS Variables*/
+var htmldb_Img_Dir = &quot;/i/&quot;;
+//--&gt;
+&lt;/script&gt;
+&lt;link rel=&quot;stylesheet&quot; href=&quot;/i/css/apex_3_1.css&quot; type=&quot;text/css&quot; /&gt;
+&lt;!--[if IE]&gt;&lt;link rel=&quot;stylesheet&quot; href=&quot;/i/css/apex_ie_3_1.css&quot; type=&quot;text/css&quot; /&gt;&lt;![endif]--&gt;
+
+&lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=utf-8&quot; /&gt;
+&lt;/head&gt;
+&lt;body &gt;&lt;form action=&quot;wwv_flow.accept&quot; method=&quot;post&quot; name=&quot;wwv_flow&quot; id=&quot;wwvFlowForm&quot; &gt;
+  &lt;input type=&quot;hidden&quot; name=&quot;p_flow_id&quot; value=&quot;107&quot; id=&quot;pFlowId&quot; /&gt;  &lt;input type=&quot;hidden&quot; name=&quot;p_flow_step_id&quot; value=&quot;1&quot; id=&quot;pFlowStepId&quot; /&gt;  &lt;input type=&quot;hidden&quot; name=&quot;p_instance&quot; value=&quot;1535769493790800&quot; id=&quot;pInstance&quot; /&gt;  &lt;input type=&quot;hidden&quot; name=&quot;p_page_submission_id&quot; value=&quot;1604837033253551&quot; id=&quot;pPageSubmissionId&quot; /&gt;  &lt;input type=&quot;hidden&quot; name=&quot;p_request&quot; value=&quot;&quot; id=&quot;pRequest&quot; /&gt;&lt;table border=&quot;0&quot; cellpadding=&quot;0&quot; cellspacing=&quot;0&quot; summary=&quot;&quot; width=&quot;100%&quot;&gt;
+&lt;tr&gt;
+&lt;td id=&quot;t14Logo&quot; valign=&quot;top&quot;&gt;&lt;br /&gt;&lt;/td&gt;
+&lt;td id=&quot;t14HeaderMiddle&quot;  valign=&quot;top&quot; width=&quot;100%&quot;&gt;&lt;br /&gt;&lt;/td&gt;
+&lt;td id=&quot;t14NavBar&quot; valign=&quot;top&quot;&gt;&lt;br /&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/table&gt;
+
+&lt;table border=&quot;0&quot; cellpadding=&quot;0&quot; cellspacing=&quot;0&quot; summary=&quot;&quot; width=&quot;100%&quot; id=&quot;t14Tabs&quot;&gt;
+&lt;tr&gt;&lt;td width=&quot;100%&quot;&gt;&lt;br /&gt;&lt;/td&gt;&lt;/tr&gt;
+&lt;/table&gt;
+&lt;div id=&quot;t14BreadCrumbsLeft&quot;&gt;&lt;img src=&quot;/i/themes/theme_14/1px_trans.gif&quot; width=&quot;1&quot; height=&quot;1&quot; alt=&quot;&quot; /&gt;&lt;/div&gt;
+&lt;table border=&quot;0&quot; cellpadding=&quot;0&quot; cellspacing=&quot;0&quot; summary=&quot;&quot; id=&quot;t14PageBody&quot;  width=&quot;100%&quot; height=&quot;70%&quot;&gt;
+&lt;td valign=&quot;top&quot; id=&quot;t14ContentBody&quot; height=&quot;100%&quot;&gt;&lt;table summary=&quot;&quot; cellpadding=&quot;0&quot; width=&quot;100%&quot; cellspacing=&quot;5&quot; border=&quot;0&quot;&gt;
+&lt;tr&gt;
+&lt;td width=&quot;100%&quot; valign=&quot;top&quot; id=&quot;t14ContentMiddle&quot;&gt;&lt;div id=&quot;t14Messages&quot;&gt;&lt;/div&gt;
+&lt;table id=&quot;apex_layout_5789600501115682&quot; class=&quot;formlayout&quot; summary=&quot;&quot; &gt;&lt;td&gt;&lt;/td&gt;&lt;td  colspan=&quot;1&quot; rowspan=&quot;1&quot; align=&quot;left&quot;&gt;&lt;input type=&quot;hidden&quot; name=&quot;p_arg_names&quot; value=&quot;5790001802135032&quot; /&gt;&lt;input type=&quot;hidden&quot; name=&quot;p_t01&quot; value=&quot;01-JAN-2014&quot; id=&quot;P1_FECHA_REPORTADO&quot;  /&gt;&lt;tr&gt;&lt;/td&gt;&lt;td nowrap align=&quot;right&quot;&gt;&lt;label for=&quot;P1_CUENTA&quot; tabindex=&quot;999&quot; style=&quot;color:red&quot;&gt;&lt;b&gt;*Cuenta:&lt;/b&gt;&lt;/label&gt;&lt;/td&gt;
+&lt;td  colspan=&quot;1&quot; rowspan=&quot;1&quot; align=&quot;left&quot;&gt;&lt;input type=&quot;hidden&quot; name=&quot;p_arg_names&quot; value=&quot;5790202407135032&quot; /&gt;&lt;input type=&quot;text&quot; name=&quot;p_t02&quot; size=&quot;60&quot; maxlength=&quot;4000&quot; value=&quot;&quot; id=&quot;P1_CUENTA&quot; onfocus=&apos;this.setAttribute(&quot;maxLength&quot;,&quot;13&quot;)&apos; /&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td nowrap align=&quot;right&quot;&gt;&lt;label for=&quot;P1_NOMBRE&quot; tabindex=&quot;999&quot; style=&quot;color:red&quot;&gt;&lt;b&gt;*Nombre:&lt;/b&gt;&lt;/label&gt;&lt;/td&gt;
+&lt;td  colspan=&quot;1&quot; rowspan=&quot;1&quot; align=&quot;left&quot;&gt;&lt;input type=&quot;hidden&quot; name=&quot;p_arg_names&quot; value=&quot;5790417424135032&quot; /&gt;&lt;input type=&quot;text&quot; name=&quot;p_t03&quot; size=&quot;60&quot; maxlength=&quot;4000&quot; value=&quot;&quot; id=&quot;P1_NOMBRE&quot; onfocus=&apos;this.setAttribute(&quot;maxLength&quot;,&quot;100&quot;)&apos; /&gt;&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;td  colspan=&quot;1&quot; rowspan=&quot;1&quot; align=&quot;left&quot;&gt;&lt;input type=&quot;hidden&quot; name=&quot;p_arg_names&quot; value=&quot;5790630075135032&quot; /&gt;&lt;input type=&quot;hidden&quot; name=&quot;p_t04&quot; value=&quot;WEB&quot; id=&quot;P1_TIPO&quot;  /&gt;&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;td  colspan=&quot;1&quot; rowspan=&quot;1&quot; align=&quot;left&quot;&gt;&lt;input type=&quot;hidden&quot; name=&quot;p_arg_names&quot; value=&quot;5790826642135032&quot; /&gt;&lt;input type=&quot;hidden&quot; name=&quot;p_t05&quot; value=&quot;1&quot; id=&quot;P1_ESTATUS&quot;  /&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td nowrap align=&quot;right&quot;&gt;&lt;label for=&quot;P1_DIRECCION1&quot; tabindex=&quot;999&quot; style=&quot;color:red&quot;&gt;&lt;b&gt;*Direccion 1:&lt;/b&gt;&lt;/label&gt;&lt;/td&gt;
+&lt;td  colspan=&quot;1&quot; rowspan=&quot;1&quot; align=&quot;left&quot;&gt;&lt;input type=&quot;hidden&quot; name=&quot;p_arg_names&quot; value=&quot;5791024882135032&quot; /&gt;&lt;input type=&quot;text&quot; name=&quot;p_t06&quot; size=&quot;60&quot; maxlength=&quot;4000&quot; value=&quot;&quot; id=&quot;P1_DIRECCION1&quot; onfocus=&apos;this.setAttribute(&quot;maxLength&quot;,&quot;400&quot;)&apos; /&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td nowrap align=&quot;right&quot;&gt;&lt;label for=&quot;P1_DIRECCION2&quot;&gt;&lt;a class=&quot;t14OptionalLabelwithHelp&quot; href=&quot;javascript:popupFieldHelp(&apos;5791219747135032&apos;,&apos;1535769493790800&apos;)&quot; tabindex=&quot;999&quot;&gt;Direccion 2:&lt;/a&gt;&lt;/label&gt;&lt;/td&gt;
+&lt;td  colspan=&quot;1&quot; rowspan=&quot;1&quot; align=&quot;left&quot;&gt;&lt;input type=&quot;hidden&quot; name=&quot;p_arg_names&quot; value=&quot;5791219747135032&quot; /&gt;&lt;input type=&quot;text&quot; name=&quot;p_t07&quot; size=&quot;60&quot; maxlength=&quot;4000&quot; value=&quot;&quot; id=&quot;P1_DIRECCION2&quot; onfocus=&apos;this.setAttribute(&quot;maxLength&quot;,&quot;400&quot;)&apos; /&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td nowrap align=&quot;right&quot;&gt;&lt;label for=&quot;P1_PUEBLO&quot; tabindex=&quot;999&quot; style=&quot;color:red&quot;&gt;&lt;b&gt;*Pueblo:&lt;/b&gt;&lt;/label&gt;&lt;/td&gt;
+&lt;td  colspan=&quot;1&quot; rowspan=&quot;1&quot; align=&quot;left&quot;&gt;&lt;input type=&quot;hidden&quot; name=&quot;p_arg_names&quot; value=&quot;5791419408135034&quot; /&gt;&lt;select name=&quot;p_t08&quot; size=&quot;1&quot;  id=&quot;P1_PUEBLO&quot; &gt;
+&lt;option  value=&quot;%null%&quot;&gt;-SELECCIONAR PUEBLO-&lt;/option&gt;
+&lt;option  value=&quot;ADJUNTAS&quot;&gt;ADJUNTAS&lt;/option&gt;
+&lt;option  value=&quot;AGUADA&quot;&gt;AGUADA&lt;/option&gt;
+&lt;option  value=&quot;AGUADILLA&quot;&gt;AGUADILLA&lt;/option&gt;
+&lt;option  value=&quot;AGUAS BUENAS&quot;&gt;AGUAS BUENAS&lt;/option&gt;
+&lt;option  value=&quot;AIBONITO&quot;&gt;AIBONITO&lt;/option&gt;
+&lt;option  value=&quot;ARECIBO&quot;&gt;ARECIBO&lt;/option&gt;
+&lt;option  value=&quot;ARROYO&quot;&gt;ARROYO&lt;/option&gt;
+&lt;option  value=&quot;AÑASCO&quot;&gt;AÑASCO&lt;/option&gt;
+&lt;option  value=&quot;BARCELONETA&quot;&gt;BARCELONETA&lt;/option&gt;
+&lt;option  value=&quot;BARRANQUITAS&quot;&gt;BARRANQUITAS&lt;/option&gt;
+&lt;option  value=&quot;BAYAMÓN&quot;&gt;BAYAMÓN&lt;/option&gt;
+&lt;option  value=&quot;CABO ROJO&quot;&gt;CABO ROJO&lt;/option&gt;
+&lt;option  value=&quot;CAGUAS&quot;&gt;CAGUAS&lt;/option&gt;
+&lt;option  value=&quot;CAMUY&quot;&gt;CAMUY&lt;/option&gt;
+&lt;option  value=&quot;CANÓVANAS&quot;&gt;CANÓVANAS&lt;/option&gt;
+&lt;option  value=&quot;CAROLINA&quot;&gt;CAROLINA&lt;/option&gt;
+&lt;option  value=&quot;CATAÑO&quot;&gt;CATAÑO&lt;/option&gt;
+&lt;option  value=&quot;CAYEY&quot;&gt;CAYEY&lt;/option&gt;
+&lt;option  value=&quot;CEIBA&quot;&gt;CEIBA&lt;/option&gt;
+&lt;option  value=&quot;CIALES&quot;&gt;CIALES&lt;/option&gt;
+&lt;option  value=&quot;CIDRA&quot;&gt;CIDRA&lt;/option&gt;
+&lt;option  value=&quot;COAMO&quot;&gt;COAMO&lt;/option&gt;
+&lt;option  value=&quot;COMERÍO&quot;&gt;COMERÍO&lt;/option&gt;
+&lt;option  value=&quot;COROZAL&quot;&gt;COROZAL&lt;/option&gt;
+&lt;option  value=&quot;CULEBRA&quot;&gt;CULEBRA&lt;/option&gt;
+&lt;option  value=&quot;DORADO&quot;&gt;DORADO&lt;/option&gt;
+&lt;option  value=&quot;FAJARDO&quot;&gt;FAJARDO&lt;/option&gt;
+&lt;option  value=&quot;FLORIDA&quot;&gt;FLORIDA&lt;/option&gt;
+&lt;option  value=&quot;GUAYAMA&quot;&gt;GUAYAMA&lt;/option&gt;
+&lt;option  value=&quot;GUAYANILLA&quot;&gt;GUAYANILLA&lt;/option&gt;
+&lt;option  value=&quot;GUAYNABO&quot;&gt;GUAYNABO&lt;/option&gt;
+&lt;option  value=&quot;GURABO&quot;&gt;GURABO&lt;/option&gt;
+&lt;option  value=&quot;GUÁNICA&quot;&gt;GUÁNICA&lt;/option&gt;
+&lt;option  value=&quot;HATILLO&quot;&gt;HATILLO&lt;/option&gt;
+&lt;option  value=&quot;HORMIGUEROS&quot;&gt;HORMIGUEROS&lt;/option&gt;
+&lt;option  value=&quot;HUMACAO&quot;&gt;HUMACAO&lt;/option&gt;
+&lt;option  value=&quot;ISABELA&quot;&gt;ISABELA&lt;/option&gt;
+&lt;option  value=&quot;JAYUYA&quot;&gt;JAYUYA&lt;/option&gt;
+&lt;option  value=&quot;JUANA DIAZ&quot;&gt;JUANA DIAZ&lt;/option&gt;
+&lt;option  value=&quot;JUNCOS&quot;&gt;JUNCOS&lt;/option&gt;
+&lt;option  value=&quot;LAJAS&quot;&gt;LAJAS&lt;/option&gt;
+&lt;option  value=&quot;LARES&quot;&gt;LARES&lt;/option&gt;
+&lt;option  value=&quot;LAS MARÍAS&quot;&gt;LAS MARÍAS&lt;/option&gt;
+&lt;option  value=&quot;LAS PIEDRAS&quot;&gt;LAS PIEDRAS&lt;/option&gt;
+&lt;option  value=&quot;LOÍZA&quot;&gt;LOÍZA&lt;/option&gt;
+&lt;option  value=&quot;LUQUILLO&quot;&gt;LUQUILLO&lt;/option&gt;
+&lt;option  value=&quot;MANATÍ&quot;&gt;MANATÍ&lt;/option&gt;
+&lt;option  value=&quot;MARICAO&quot;&gt;MARICAO&lt;/option&gt;
+&lt;option  value=&quot;MAUNABO&quot;&gt;MAUNABO&lt;/option&gt;
+&lt;option  value=&quot;MAYAGUEZ&quot;&gt;MAYAGUEZ&lt;/option&gt;
+&lt;option  value=&quot;MOCA&quot;&gt;MOCA&lt;/option&gt;
+&lt;option  value=&quot;MOROVIS&quot;&gt;MOROVIS&lt;/option&gt;
+&lt;option  value=&quot;NAGUABO&quot;&gt;NAGUABO&lt;/option&gt;
+&lt;option  value=&quot;NARANJITO&quot;&gt;NARANJITO&lt;/option&gt;
+&lt;option  value=&quot;OROCOVIS&quot;&gt;OROCOVIS&lt;/option&gt;
+&lt;option  value=&quot;PATILLAS&quot;&gt;PATILLAS&lt;/option&gt;
+&lt;option  value=&quot;PEÑUELAS&quot;&gt;PEÑUELAS&lt;/option&gt;
+&lt;option  value=&quot;PONCE&quot;&gt;PONCE&lt;/option&gt;
+&lt;option  value=&quot;QUEBRADILLAS&quot;&gt;QUEBRADILLAS&lt;/option&gt;
+&lt;option  value=&quot;RINCÓN&quot;&gt;RINCÓN&lt;/option&gt;
+&lt;option  value=&quot;RÍO GRANDE&quot;&gt;RÍO GRANDE&lt;/option&gt;
+&lt;option  value=&quot;SABANA GRANDE&quot;&gt;SABANA GRANDE&lt;/option&gt;
+&lt;option  value=&quot;SAN GERMAN&quot;&gt;SAN GERMAN&lt;/option&gt;
+&lt;option  value=&quot;SAN JUAN&quot;&gt;SAN JUAN&lt;/option&gt;
+&lt;option  value=&quot;SAN LORENZO&quot;&gt;SAN LORENZO&lt;/option&gt;
+&lt;option  value=&quot;SAN SEBASTIÁN&quot;&gt;SAN SEBASTIÁN&lt;/option&gt;
+&lt;option  value=&quot;SANTA ISABEL&quot;&gt;SANTA ISABEL&lt;/option&gt;
+&lt;option  value=&quot;TOA ALTA&quot;&gt;TOA ALTA&lt;/option&gt;
+&lt;option  value=&quot;TOA BAJA&quot;&gt;TOA BAJA&lt;/option&gt;
+&lt;option  value=&quot;TRUJILLO ALTO&quot;&gt;TRUJILLO ALTO&lt;/option&gt;
+&lt;option  value=&quot;UTUADO&quot;&gt;UTUADO&lt;/option&gt;
+&lt;option  value=&quot;VEGA ALTAS&quot;&gt;VEGA ALTAS&lt;/option&gt;
+&lt;option  value=&quot;VEGA BAJA&quot;&gt;VEGA BAJA&lt;/option&gt;
+&lt;option  value=&quot;VIEQUES&quot;&gt;VIEQUES&lt;/option&gt;
+&lt;option  value=&quot;VILLALBA&quot;&gt;VILLALBA&lt;/option&gt;
+&lt;option  value=&quot;YABUCOA&quot;&gt;YABUCOA&lt;/option&gt;
+&lt;option  value=&quot;YAUCO&quot;&gt;YAUCO&lt;/option&gt;
+&lt;/select&gt;
+&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td nowrap align=&quot;right&quot;&gt;&lt;label for=&quot;P1_CODIGO_POSTAL&quot;&gt;&lt;a class=&quot;t14OptionalLabelwithHelp&quot; href=&quot;javascript:popupFieldHelp(&apos;5791601057135034&apos;,&apos;1535769493790800&apos;)&quot; tabindex=&quot;999&quot;&gt;Codigo Postal:&lt;/a&gt;&lt;/label&gt;&lt;/td&gt;
+&lt;td  colspan=&quot;1&quot; rowspan=&quot;1&quot; align=&quot;left&quot;&gt;&lt;input type=&quot;hidden&quot; name=&quot;p_arg_names&quot; value=&quot;5791601057135034&quot; /&gt;&lt;input type=&quot;text&quot; name=&quot;p_t09&quot; size=&quot;60&quot; maxlength=&quot;4000&quot; value=&quot;&quot; id=&quot;P1_CODIGO_POSTAL&quot; onfocus=&apos;this.setAttribute(&quot;maxLength&quot;,&quot;5&quot;)&apos; /&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td nowrap align=&quot;right&quot;&gt;&lt;label for=&quot;P1_MAGNITUD_AVERIA&quot; tabindex=&quot;999&quot; style=&quot;color:red&quot;&gt;&lt;b&gt;*Magnitud Avería:&lt;/b&gt;&lt;/label&gt;&lt;/td&gt;
+&lt;td  colspan=&quot;1&quot; rowspan=&quot;1&quot; align=&quot;left&quot;&gt;&lt;input type=&quot;hidden&quot; name=&quot;p_arg_names&quot; value=&quot;5791832250135034&quot; /&gt;&lt;fieldset id=&quot;P1_MAGNITUD_AVERIA&quot; class=&quot;radio_group&quot;&gt;&lt;input type=&quot;radio&quot; name=&quot;p_v10&quot; value=&quot;Solo mi casa&quot;   id=&quot;P1_MAGNITUD_AVERIA_0&quot; /&gt;
+&lt;label for=&quot;P1_MAGNITUD_AVERIA_0&quot;&gt;Solo mi casa&lt;/label&gt;&lt;br /&gt;&lt;input type=&quot;radio&quot; name=&quot;p_v10&quot; value=&quot;Varias casas&quot;   id=&quot;P1_MAGNITUD_AVERIA_1&quot; /&gt;
+&lt;label for=&quot;P1_MAGNITUD_AVERIA_1&quot;&gt;Varias casas&lt;/label&gt;&lt;/fieldset&gt;
+&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td nowrap align=&quot;right&quot;&gt;&lt;label for=&quot;P1_TELEFONO&quot; tabindex=&quot;999&quot; style=&quot;color:red&quot;&gt;&lt;b&gt;*Númerito de Teléfono:&lt;/b&gt;&lt;/label&gt;&lt;/td&gt;
+&lt;td  colspan=&quot;1&quot; rowspan=&quot;1&quot; align=&quot;left&quot;&gt;&lt;input type=&quot;hidden&quot; name=&quot;p_arg_names&quot; value=&quot;5792006936135034&quot; /&gt;&lt;input type=&quot;text&quot; name=&quot;p_t11&quot; size=&quot;60&quot; maxlength=&quot;4000&quot; value=&quot;&quot; id=&quot;P1_TELEFONO&quot; onfocus=&apos;this.setAttribute(&quot;maxLength&quot;,&quot;12&quot;)&apos; /&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td nowrap align=&quot;right&quot;&gt;&lt;label for=&quot;P1_CORREO&quot; tabindex=&quot;999&quot; style=&quot;color:red&quot;&gt;&lt;b&gt;*Correo electrónico:&lt;/b&gt;&lt;/label&gt;&lt;/td&gt;
+&lt;td  colspan=&quot;1&quot; rowspan=&quot;1&quot; align=&quot;left&quot;&gt;&lt;input type=&quot;hidden&quot; name=&quot;p_arg_names&quot; value=&quot;5798412509261035&quot; /&gt;&lt;input type=&quot;text&quot; name=&quot;p_t12&quot; size=&quot;60&quot; maxlength=&quot;2000&quot; value=&quot;&quot; id=&quot;P1_CORREO&quot;  /&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td nowrap align=&quot;right&quot;&gt;&lt;label for=&quot;P1_REFERENCIA&quot; tabindex=&quot;999&quot; style=&quot;color:red&quot;&gt;&lt;b&gt;*Referencia:&lt;/b&gt;&lt;/label&gt;&lt;/td&gt;
+&lt;td  colspan=&quot;1&quot; rowspan=&quot;1&quot; align=&quot;left&quot;&gt;&lt;input type=&quot;hidden&quot; name=&quot;p_arg_names&quot; value=&quot;5792208236135034&quot; /&gt;&lt;textarea name=&quot;p_t13&quot; cols=&quot;60&quot; rows=&quot;4&quot; wrap=&quot;virtual&quot; id=&quot;P1_REFERENCIA&quot; onfocus=&apos;this.setAttribute(&quot;maxLength&quot;,&quot;400&quot;)&apos;&gt;&lt;/textarea&gt;
+&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td nowrap=&quot;nowrap&quot; align=&quot;right&quot;&gt;&lt;label for=&quot;P1_COMENTARIO&quot;&gt;&lt;a class=&quot;t14OptionalLabelwithHelp&quot; href=&quot;javascript:popupFieldHelp(&apos;5792415654139040&apos;,&apos;1535769493790800&apos;)&quot; tabindex=&quot;999&quot;&gt;Comentario:&lt;/a&gt;&lt;/label&gt;&lt;/td&gt;
+&lt;td  colspan=&quot;1&quot; rowspan=&quot;1&quot; align=&quot;left&quot;&gt;&lt;input type=&quot;hidden&quot; name=&quot;p_arg_names&quot; value=&quot;5792415654139040&quot; /&gt;&lt;textarea name=&quot;p_t14&quot; cols=&quot;60&quot; rows=&quot;4&quot; wrap=&quot;virtual&quot; id=&quot;P1_COMENTARIO&quot; &gt;&lt;/textarea&gt;
+&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;/td&gt;&lt;td  colspan=&quot;1&quot; rowspan=&quot;1&quot; align=&quot;left&quot;&gt;&lt;input type=&quot;hidden&quot; name=&quot;p_arg_names&quot; value=&quot;5792628121142612&quot; /&gt;&lt;input type=&quot;hidden&quot; name=&quot;p_t15&quot; value=&quot;SECTOR SIN SERVICIO&quot; id=&quot;P1_PROBLEMA&quot;  /&gt;&lt;/td&gt;&lt;td  align=&quot;left&quot;&gt;&lt;/td&gt;
+&lt;td  colspan=&quot;1&quot; rowspan=&quot;1&quot; align=&quot;left&quot;&gt;&lt;input type=&quot;button&quot; onclick=&quot;javascript:doSubmit(&apos;Borrar&apos;);&quot; value=&quot;Borrar&quot; class=&quot;t14Button&quot; /&gt;&lt;/td&gt;&lt;td  align=&quot;left&quot;&gt;&lt;/td&gt;
+&lt;td  colspan=&quot;1&quot; rowspan=&quot;1&quot; align=&quot;left&quot;&gt;&lt;input type=&quot;button&quot; onclick=&quot;javascript:doSubmit(&apos;Enviar&apos;);&quot; value=&quot;Enviar&quot; class=&quot;t14Button&quot; /&gt;&lt;/td&gt;&lt;/tr&gt;
+&lt;/table&gt;
+&lt;/td&gt;
+&lt;td valign=&quot;top&quot; id=&quot;t14ContentRight&quot;&gt;&lt;br /&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/table&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/table&gt;&lt;table border=&quot;0&quot; cellpadding=&quot;0&quot; cellspacing=&quot;0&quot; summary=&quot;&quot; id=&quot;t14PageFooter&quot; width=&quot;100%&quot;&gt;
+&lt;tr&gt;
+&lt;!--&lt;td id=&quot;t14Left&quot; valign=&quot;top&quot;&gt;&lt;span id=&quot;t14UserPrompt&quot;&gt;APEX_PUBLIC_USER&lt;/span&gt;&lt;br /&gt;&lt;/td&gt;--&gt;
+&lt;td id=&quot;t14Center&quot; valign=&quot;top&quot;&gt;&lt;/td&gt;
+&lt;td id=&quot;t14Right&quot; valign=&quot;top&quot;&gt;&lt;span id=&quot;t14Customize&quot;&gt;&lt;/span&gt;&lt;br /&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/table&gt;
+&lt;br class=&quot;t14Break&quot;/&gt;
+&lt;input type=&quot;hidden&quot; name=&quot;p_md5_checksum&quot; value=&quot;&quot;  /&gt;&lt;/form&gt; 
+&lt;script type=&quot;text/javascript&quot;&gt;
+&lt;!-- 
+    first_field(&apos;P1_CUENTA&apos;);
+
+//--&gt;
+&lt;/script&gt;&lt;/body&gt;
+&lt;/html&gt;</string>
+</dict>
+</plist>

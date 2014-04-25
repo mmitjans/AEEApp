@@ -14,6 +14,13 @@
 #import "Coordinates.h"
 
 @interface ZMMapViewController ()
+{
+    MKMapView *_mapView;
+    ZMGeocoder *myGeocoder;
+    
+    CLGeocodeCompletionHandler geoCoderHandler;
+    
+}
 
 @end
 
@@ -106,6 +113,9 @@
                 CLPlacemark *placemark = [placemarks objectAtIndex:0];
                 CLLocation *location = placemark.location;
                 coordinate = location.coordinate;
+                
+                CLCircularRegion *clRegion = [placemark region];
+                NSDictionary* addressDictionary = [placemark addressDictionary];
                 
                 circle = [MKCircle circleWithCenterCoordinate:coordinate radius:[[placemark region] radius]];
 

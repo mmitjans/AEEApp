@@ -9,14 +9,18 @@
 #import "ZMNewUserViewController.h"
 #import "ZMEntityManager.h"
 
-#import "PAWActivityView.h"
-
 #import <Parse/Parse.h>
 
 #import "ZMParseHelper.h"
 
+#import "MBProgressHUD.h"
+
+#import <Parse/Parse.h>
+
 @interface ZMNewUserViewController ()
-- (void)processFieldEntries;
+
+@property (strong, nonatomic) PFUser* authenticatedUser;
+
 - (void)textInputChanged:(NSNotification *)note;
 - (BOOL)shouldEnableDoneButton;
 @end
@@ -31,7 +35,6 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        // Custom initialization
     }
     return self;
 }
@@ -39,17 +42,25 @@
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    
 }
 
 #pragma mark - View lifecycle
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.view.backgroundColor = [UIColor colorWithRed:166 green:221 blue:255 alpha:1];
+    
     // Do any additional setup after loading the view from its nib.
 	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(textInputChanged:) name:UITextFieldTextDidChangeNotification object:usernameField];
 	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(textInputChanged:) name:UITextFieldTextDidChangeNotification object:passwordField];
 	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(textInputChanged:) name:UITextFieldTextDidChangeNotification object:passwordAgainField];
+    
+    
+    self.usernameField.delegate = self;
+    self.passwordField.delegate = self;
+    self.passwordAgainField.delegate = self;
     
 	doneButton.enabled = NO;
     
@@ -64,9 +75,6 @@
 	[[NSNotificationCenter defaultCenter] removeObserver:self name:UITextFieldTextDidChangeNotification object:usernameField];
 	[[NSNotificationCenter defaultCenter] removeObserver:self name:UITextFieldTextDidChangeNotification object:passwordField];
 	[[NSNotificationCenter defaultCenter] removeObserver:self name:UITextFieldTextDidChangeNotification object:passwordAgainField];
-    // Release any retained subviews of the main view.
-    
-
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -96,7 +104,7 @@
 	}
 	if (textField == passwordAgainField) {
 		[passwordAgainField resignFirstResponder];
-		[self processFieldEntries];
+		[self processNewUserFields];
 	}
     
 	return YES;
@@ -132,31 +140,47 @@
     [usernameField resignFirstResponder];
 	[passwordField resignFirstResponder];
 	[passwordAgainField resignFirstResponder];
-	[self processFieldEntries];
 }
 
 - (IBAction)signIn:(id)sender
 {
-    __weak ZMNewUserViewController *weakSelf = self;
+    [usernameField resignFirstResponder];
+	[passwordField resignFirstResponder];
     
-    [ZMParseHelper logInWithUsername:usernameField.text
-                         andPassword:passwordField.text
-                       andParseBlock:^(PFUser *user, NSError *error) {
-                           
-                           if([user isAuthenticated])
-                           {
-                               [weakSelf dismissViewControllerAnimated:YES completion:^{
+    if(![self processSignInFieldEntries])
+    {
+        __weak ZMNewUserViewController *weakSelf = self;
+        
+        
+        MBProgressHUD* hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+        hud.labelText = @"Signing in";
+        
+        [ZMParseHelper logInWithUsername:usernameField.text
+                             andPassword:passwordField.text
+                           andParseBlock:^(PFUser *user, NSError *error) {
+                               
+                               weakSelf.authenticatedUser = user;
+                               
+                               [MBProgressHUD hideHUDForView:self.view animated:YES];
+                               
+                               if([user isAuthenticated])
+                               {
+                                   ZMEntityManager *entityManager = [ZMEntityManager sharedInstance];
                                    
-                               }];
-                           }
-                           
+                                   [entityManager storeUser:[user username] andPassword:[user password]];
+                                   
+                                   [weakSelf dismissViewControllerAnimated:YES completion:^{
+                                       
+                                   }];
+                               }
+                               
+                           }];
+    }
 
-    }];
 }
 
 - (IBAction)registerUser:(id)sender
 {
-    
     [passwordAgainField setHidden:NO];
     
     [UIView animateWithDuration:1 delay:0.1
@@ -174,10 +198,11 @@
     
 }
 
+// This is the action that will register the user
 - (IBAction)realRegisterHit:(id)sender
 {
     UIAlertView *alertView =
-    [[UIAlertView alloc] initWithTitle:@"Success"
+    [[UIAlertView alloc] initWithTitle:@"User Registration"
                                message:@"Do something interesting!"
                               delegate:nil
                      cancelButtonTitle:nil
@@ -186,14 +211,57 @@
     if (![self validateInputInView:self.view]){
         
         [alertView setMessage:@"Invalid information please review and try again!"];
-        [alertView setTitle:@"Login Failed"];
+        [alertView setTitle:@"Registration Failed"];
+        
+        [alertView show];
     }
     else
     {
-        [self processFieldEntries];
+        
+        [usernameField resignFirstResponder];
+        [passwordField resignFirstResponder];
+        [passwordAgainField resignFirstResponder];
+        
+        // Creates the new user
+        __block PFUser *user = [PFUser user];
+        user.username = self.usernameField.text;
+        user.password = self.passwordField.text;
+        user.email = self.usernameField.text;
+
+        __weak ZMNewUserViewController *weakSelf = self;
+        
+        MBProgressHUD* hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+        hud.labelText = @"Registering";
+        
+        [user signUpInBackgroundWithBlock:^(BOOL succeeded, NSError *error)
+        {
+            if (!error) {
+                
+                [MBProgressHUD hideHUDForView:self.view animated:YES];
+                
+                [alertView setMessage:@"Registration completed"];
+                [alertView setTitle:@"Registration Successful"];
+                
+                ZMEntityManager *entityManager = [ZMEntityManager sharedInstance];
+                
+                [entityManager storeUser:[user username] andPassword:[user password]];
+                
+                
+                [weakSelf dismissViewControllerAnimated:YES completion:nil];
+                
+            } else {
+                [MBProgressHUD hideHUDForView:self.view animated:YES];
+                NSString *errorString = [error userInfo][@"error"];
+                
+                [alertView setMessage:errorString];
+                [alertView setTitle:@"Registration Unsuccessful"];
+            }
+            
+            [alertView show];
+        }];
     }
     
-    [alertView show];
+    
 }
 
 #pragma mark - Private methods:
@@ -215,8 +283,62 @@
 }
 
 #pragma mark Field validation
+-(bool)processSignInFieldEntries
+{
+   	// Check that we have a non-zero username and passwords.
+	// Compare password and passwordAgain for equality
+	// Throw up a dialog that tells them what they did wrong if they did it wrong.
+    
+	NSString *username = usernameField.text;
+	NSString *password = passwordField.text;
+	NSString *errorText = @"Please ";
+	NSString *usernameBlankText = @"enter a username";
+	NSString *passwordBlankText = @"enter a password";
+    NSString *joinText = @", and ";
+	
+    BOOL textError = NO;
+    
+	// Messaging nil will return 0, so these checks implicitly check for nil text.
+	if (username.length == 0 || password.length == 0) {
+		textError = YES;
+        
+		// Set up the keyboard for the first field missing input:
+		if (password.length == 0) {
+			[passwordField becomeFirstResponder];
+		}
+		if (username.length == 0) {
+			[usernameField becomeFirstResponder];
+		}
+        
+		if (username.length == 0) {
+			errorText = [errorText stringByAppendingString:usernameBlankText];
+		}
+        
+		if (password.length == 0) {
+			if (username.length == 0) { // We need some joining text in the error:
+				errorText = [errorText stringByAppendingString:joinText];
+			}
+			errorText = [errorText stringByAppendingString:passwordBlankText];
+		}
+        
+		[self showErrorAlert:errorText];
+	}
 
-- (void)processFieldEntries {
+    return textError;
+}
+
+-(void)showErrorAlert:(NSString*)errorText
+{
+    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:errorText
+                                                        message:nil
+                                                       delegate:self
+                                              cancelButtonTitle:nil
+                                              otherButtonTitles:@"Ok", nil];
+    [alertView show];
+}
+
+- (void)processNewUserFields
+{
 	// Check that we have a non-zero username and passwords.
 	// Compare password and passwordAgain for equality
 	// Throw up a dialog that tells them what they did wrong if they did it wrong.
@@ -257,7 +379,8 @@
 			}
 			errorText = [errorText stringByAppendingString:passwordBlankText];
 		}
-		goto showDialog;
+        
+        [self showErrorAlert:errorText];
 	}
 	
 	// We have non-zero strings.
@@ -266,61 +389,43 @@
 		textError = YES;
 		errorText = [errorText stringByAppendingString:passwordMismatchText];
 		[passwordField becomeFirstResponder];
-		goto showDialog;
+		[self showErrorAlert:errorText];
 	}
-    
-showDialog:
-	if (textError) {
-		UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:errorText message:nil delegate:self cancelButtonTitle:nil otherButtonTitles:@"Ok", nil];
-		[alertView show];
-		return;
-	}
-    
-	// Everything looks good; try to log in.
-	// Disable the done button for now.
-	doneButton.enabled = NO;
-	PAWActivityView *activityView = [[PAWActivityView alloc] initWithFrame:CGRectMake(0.f, 0.f, self.view.frame.size.width, self.view.frame.size.height)];
-	UILabel *label = activityView.label;
-	label.text = @"Signing You Up";
-	label.font = [UIFont boldSystemFontOfSize:20.f];
-	[activityView.activityIndicator startAnimating];
-	[activityView layoutSubviews];
-    
-	[self.view addSubview:activityView];
-    
-	// Call into an object somewhere that has code for setting up a user.
-	// The app delegate cares about this, but so do a lot of other objects.
-	// For now, do this inline.
-    
-	PFUser *user = [PFUser user];
-	user.username = username;
-	user.password = password;
-	[user signUpInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
-		if (error) {
-			UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:[[error userInfo] objectForKey:@"error"] message:nil delegate:self cancelButtonTitle:nil otherButtonTitles:@"Ok", nil];
-			[alertView show];
-			doneButton.enabled = [self shouldEnableDoneButton];
-			[activityView.activityIndicator stopAnimating];
-			[activityView removeFromSuperview];
-			// Bring the keyboard back up, because they'll probably need to change something.
-			[usernameField becomeFirstResponder];
-			return;
-		}
-        
-		// Success!
-		[activityView.activityIndicator stopAnimating];
-		[activityView removeFromSuperview];
-        
-        ZMEntityManager *entityManager = [ZMEntityManager sharedInstance];
-        
-        [entityManager storeUser:user.username andPassword:user.password];
-        
-//		PAWWallViewController *wallViewController = [[PAWWallViewController alloc] initWithNibName:nil bundle:nil];
-//		[(UINavigationController *)self.presentingViewController pushViewController:wallViewController animated:NO];
-		[self.presentingViewController dismissViewControllerAnimated:YES completion:^{
-            
-        }];
-	}];
+
 
 }
+
+- (IBAction)loginWithFacebook:(id)sender
+{
+    // Set permissions required from the facebook user account
+    NSArray *permissionsArray = @[ @"user_about_me", @"user_location"];
+    
+    // Login PFUser using facebook
+    [PFFacebookUtils logInWithPermissions:permissionsArray block:^(PFUser *user, NSError *error) {
+        
+        if (!user) {
+            if (!error) {
+                NSLog(@"Uh oh. The user cancelled the Facebook login.");
+                UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Log In Error" message:@"Uh oh. The user cancelled the Facebook login." delegate:nil cancelButtonTitle:nil otherButtonTitles:@"Dismiss", nil];
+                [alert show];
+            } else {
+                NSLog(@"Uh oh. An error occurred: %@", error);
+                UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Log In Error" message:[error description] delegate:nil cancelButtonTitle:nil otherButtonTitles:@"Dismiss", nil];
+                [alert show];
+            }
+        } else if (user.isNew)
+        {
+            ZMEntityManager *entityManager = [ZMEntityManager sharedInstance];
+            
+            [entityManager storeUser:[user username] andPassword:[user password]];
+            
+        } else {
+            NSLog(@"User with facebook logged in!");
+            
+        }
+    }];
+    
+}
+
+
 @end

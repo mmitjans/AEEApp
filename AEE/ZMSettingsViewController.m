@@ -9,7 +9,7 @@
 #import "ZMSettingsViewController.h"
 #import <Parse/Parse.h>
 #import "ZMEntityManager.h"
-
+#import "User.h"
 @interface ZMSettingsViewController ()
 
 @end
@@ -17,7 +17,6 @@
 @implementation ZMSettingsViewController
 
 @synthesize usernameField;
-@synthesize passwordField;
 @synthesize username;
 @synthesize password;
 
@@ -34,18 +33,15 @@
 {
     [super viewDidLoad];
     
-    [usernameField setText:username];
-    [passwordField setText:password];
-}
+    ZMEntityManager *entityManager = [ZMEntityManager sharedInstance];
+    User *loggedUser = [entityManager getUser];
 
-- (void)viewWillAppear:(BOOL)animated
-{
+    [usernameField setText:[loggedUser username]];
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 - (IBAction)userNameSet:(id)sender {
@@ -55,12 +51,9 @@
     
     [PFUser logOut];
     
-    // clears the text fields
-    self.passwordField.text = @"";
-    
     ZMEntityManager *entityManager = [ZMEntityManager sharedInstance];
-    
     [entityManager clearUser];
+    self.usernameField.text = @"";
     
 }
 

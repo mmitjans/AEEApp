@@ -142,7 +142,7 @@
     return nil;
 }
 
--(void) clearPueblos
+-(void)clearPueblos
 {
     NSArray *pueblos = [self getAllPueblos];
     
@@ -158,7 +158,7 @@
 }
 
 // Setter Methods
--(void) storePueblo:(NSMutableDictionary*) pueblos
+-(void)storePueblo:(NSMutableDictionary*) pueblos
 {
     [pueblos enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop){
         

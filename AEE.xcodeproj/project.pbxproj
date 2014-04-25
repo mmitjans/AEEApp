@@ -7,10 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		480954501879D33900E32890 /* CustomStrings.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4809544F1879D33900E32890 /* CustomStrings.strings */; };
+		480954511879D36500E32890 /* ZMNewUserViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 480954531879D36500E32890 /* ZMNewUserViewController.xib */; };
 		4817D79317700B290056FE9A /* ZMConfigDataParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 4817D79217700B290056FE9A /* ZMConfigDataParser.m */; };
 		4817D7961772A4A60056FE9A /* ZMPueblo.m in Sources */ = {isa = PBXBuildFile; fileRef = 4817D7951772A4A60056FE9A /* ZMPueblo.m */; };
-		481A9147176FF9B9007B6732 /* ZMUserConfigViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 481A9145176FF9B9007B6732 /* ZMUserConfigViewController.m */; };
-		481A9148176FF9B9007B6732 /* ZMUserConfigViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 481A9146176FF9B9007B6732 /* ZMUserConfigViewController.xib */; };
 		481A914F176FFCC2007B6732 /* MyLogInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 481A914C176FFCC2007B6732 /* MyLogInViewController.m */; };
 		481A9150176FFCC2007B6732 /* MySignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 481A914E176FFCC2007B6732 /* MySignUpViewController.m */; };
 		481A915C176FFE75007B6732 /* Exit.png in Resources */ = {isa = PBXBuildFile; fileRef = 481A9152176FFE74007B6732 /* Exit.png */; };
@@ -24,6 +24,8 @@
 		481A916C17700AA9007B6732 /* barrios.json in Resources */ = {isa = PBXBuildFile; fileRef = 481A916B17700AA9007B6732 /* barrios.json */; };
 		482FDCAE185E6B2200A033DD /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 482FDCAD185E6B2200A033DD /* Images.xcassets */; };
 		482FDCB3185E6C6400A033DD /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 482FDCB2185E6C6400A033DD /* MBProgressHUD.m */; };
+		4862F50818E7CBFB00A69845 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4862F50618E7CB9400A69845 /* Parse.framework */; };
+		4862F50918E7CC2300A69845 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48EFED1C187A1FAA00A15718 /* FacebookSDK.framework */; };
 		486FE898185E7AA200E7DF63 /* MHTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 486FE897185E7AA200E7DF63 /* MHTextField.m */; };
 		486FE89B185E897E00E7DF63 /* ZMParseHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 486FE89A185E897E00E7DF63 /* ZMParseHelper.m */; };
 		486FE89C185E897E00E7DF63 /* ZMParseHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 486FE89A185E897E00E7DF63 /* ZMParseHelper.m */; };
@@ -40,10 +42,13 @@
 		488107E3177A73BF00B9C839 /* UIViewController+KNSemiModal.m in Sources */ = {isa = PBXBuildFile; fileRef = 488107E2177A73BF00B9C839 /* UIViewController+KNSemiModal.m */; };
 		488107E4177A78B500B9C839 /* UIViewController+KNSemiModal.h in Sources */ = {isa = PBXBuildFile; fileRef = 488107E1177A73BF00B9C839 /* UIViewController+KNSemiModal.h */; };
 		488107E5177A78B500B9C839 /* UIViewController+KNSemiModal.m in Sources */ = {isa = PBXBuildFile; fileRef = 488107E2177A73BF00B9C839 /* UIViewController+KNSemiModal.m */; };
+		488BC1881876353600360457 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 488BC1871876353600360457 /* Settings.bundle */; };
+		488BC18A1876382C00360457 /* Entitlements.plist in Resources */ = {isa = PBXBuildFile; fileRef = 488BC1891876382C00360457 /* Entitlements.plist */; };
 		48BC73491775481F00D0D6E3 /* ZMBarrio.m in Sources */ = {isa = PBXBuildFile; fileRef = 48BC73481775481F00D0D6E3 /* ZMBarrio.m */; };
+		48CB9B4218748FF700499D24 /* ZMReportViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 48CB9B4118748FF700499D24 /* ZMReportViewController.m */; };
+		48CB9B451874A4BA00499D24 /* config.plist in Resources */ = {isa = PBXBuildFile; fileRef = 48CB9B441874A4BA00499D24 /* config.plist */; };
 		48CFCA53176E9FAA00BE1FE7 /* ZMGradientView.m in Sources */ = {isa = PBXBuildFile; fileRef = 48CFCA52176E9FAA00BE1FE7 /* ZMGradientView.m */; };
 		48CFCA55176EA04400BE1FE7 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48CFCA54176EA04400BE1FE7 /* QuartzCore.framework */; };
-		48CFCA57176EAB4B00BE1FE7 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48CFCA56176EAB4B00BE1FE7 /* Parse.framework */; };
 		48CFCA59176EAC5A00BE1FE7 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48CFCA58176EAC5A00BE1FE7 /* CoreLocation.framework */; };
 		48CFCA5B176EAC9100BE1FE7 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48CFCA5A176EAC9100BE1FE7 /* AudioToolbox.framework */; };
 		48CFCA5D176EAC9700BE1FE7 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48CFCA5C176EAC9700BE1FE7 /* CFNetwork.framework */; };
@@ -53,7 +58,6 @@
 		48CFCA64176EACBA00BE1FE7 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48CFCA63176EACBA00BE1FE7 /* Security.framework */; };
 		48CFCA66176EACC200BE1FE7 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48CFCA65176EACC200BE1FE7 /* StoreKit.framework */; };
 		48CFCA68176EACC700BE1FE7 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48CFCA67176EACC700BE1FE7 /* SystemConfiguration.framework */; };
-		48CFCA6B176EB20400BE1FE7 /* DefaultSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 48CFCA6A176EB20400BE1FE7 /* DefaultSettingsViewController.m */; };
 		48EA93B71767EC5C00A91B5C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48EA93B61767EC5C00A91B5C /* UIKit.framework */; };
 		48EA93B91767EC5C00A91B5C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48EA93B81767EC5C00A91B5C /* Foundation.framework */; };
 		48EA93C11767EC5C00A91B5C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 48EA93BF1767EC5C00A91B5C /* InfoPlist.strings */; };
@@ -64,7 +68,6 @@
 		48EA93CD1767EC5C00A91B5C /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 48EA93CC1767EC5C00A91B5C /* Default-568h@2x.png */; };
 		48EA93D01767EC5C00A91B5C /* MainStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 48EA93CE1767EC5C00A91B5C /* MainStoryboard_iPhone.storyboard */; };
 		48EA93D31767EC5C00A91B5C /* MainStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 48EA93D11767EC5C00A91B5C /* MainStoryboard_iPad.storyboard */; };
-		48EA93D61767EC5C00A91B5C /* ZMViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 48EA93D51767EC5C00A91B5C /* ZMViewController.m */; };
 		48EA93DE1767EC5C00A91B5C /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48EA93DD1767EC5C00A91B5C /* SenTestingKit.framework */; };
 		48EA93DF1767EC5C00A91B5C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48EA93B61767EC5C00A91B5C /* UIKit.framework */; };
 		48EA93E01767EC5C00A91B5C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48EA93B81767EC5C00A91B5C /* Foundation.framework */; };
@@ -91,9 +94,6 @@
 		48FAA944177FE8D9001F8A3F /* ZMLocationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 48FAA943177FE8D9001F8A3F /* ZMLocationViewController.m */; };
 		48FAA94717809E71001F8A3F /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 48FAA94617809E71001F8A3F /* User.m */; };
 		48FAA94B17826BCE001F8A3F /* ZMNewUserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 48FAA94917826BCC001F8A3F /* ZMNewUserViewController.m */; };
-		48FAA94C17826BCE001F8A3F /* ZMNewUserViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 48FAA94A17826BCD001F8A3F /* ZMNewUserViewController.xib */; };
-		48FAA94F178273DF001F8A3F /* PAWActivityView.m in Sources */ = {isa = PBXBuildFile; fileRef = 48FAA94E178273DE001F8A3F /* PAWActivityView.m */; };
-		48FAA950178273DF001F8A3F /* PAWActivityView.m in Sources */ = {isa = PBXBuildFile; fileRef = 48FAA94E178273DE001F8A3F /* PAWActivityView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -107,13 +107,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4809544F1879D33900E32890 /* CustomStrings.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = CustomStrings.strings; sourceTree = "<group>"; };
+		480954521879D36500E32890 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ZMNewUserViewController.xib; sourceTree = "<group>"; };
+		480954551879D37600E32890 /* es */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = es; path = es.lproj/MainStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
+		480954561879D37600E32890 /* es */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = es; path = es.lproj/MainStoryboard_iPad.storyboard; sourceTree = "<group>"; };
+		480954571879D37700E32890 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		480954581879D37700E32890 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		4817D79117700B290056FE9A /* ZMConfigDataParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZMConfigDataParser.h; sourceTree = "<group>"; };
 		4817D79217700B290056FE9A /* ZMConfigDataParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZMConfigDataParser.m; sourceTree = "<group>"; };
 		4817D7941772A4A60056FE9A /* ZMPueblo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZMPueblo.h; sourceTree = "<group>"; };
 		4817D7951772A4A60056FE9A /* ZMPueblo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZMPueblo.m; sourceTree = "<group>"; };
-		481A9144176FF9B9007B6732 /* ZMUserConfigViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZMUserConfigViewController.h; sourceTree = "<group>"; };
-		481A9145176FF9B9007B6732 /* ZMUserConfigViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZMUserConfigViewController.m; sourceTree = "<group>"; };
-		481A9146176FF9B9007B6732 /* ZMUserConfigViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZMUserConfigViewController.xib; sourceTree = "<group>"; };
 		481A914B176FFCC2007B6732 /* MyLogInViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyLogInViewController.h; sourceTree = "<group>"; };
 		481A914C176FFCC2007B6732 /* MyLogInViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyLogInViewController.m; sourceTree = "<group>"; };
 		481A914D176FFCC2007B6732 /* MySignUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MySignUpViewController.h; sourceTree = "<group>"; };
@@ -131,6 +134,7 @@
 		482FDCAD185E6B2200A033DD /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		482FDCB1185E6C6400A033DD /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
 		482FDCB2185E6C6400A033DD /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
+		4862F50618E7CB9400A69845 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Parse.framework; path = ../Parse.framework; sourceTree = "<group>"; };
 		486FE896185E7AA200E7DF63 /* MHTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MHTextField.h; sourceTree = "<group>"; };
 		486FE897185E7AA200E7DF63 /* MHTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MHTextField.m; sourceTree = "<group>"; };
 		486FE899185E897E00E7DF63 /* ZMParseHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZMParseHelper.h; sourceTree = "<group>"; };
@@ -153,8 +157,13 @@
 		488107DE177A5B4E00B9C839 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		488107E1177A73BF00B9C839 /* UIViewController+KNSemiModal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+KNSemiModal.h"; sourceTree = "<group>"; };
 		488107E2177A73BF00B9C839 /* UIViewController+KNSemiModal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+KNSemiModal.m"; sourceTree = "<group>"; };
+		488BC1871876353600360457 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
+		488BC1891876382C00360457 /* Entitlements.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Entitlements.plist; sourceTree = "<group>"; };
 		48BC73471775481F00D0D6E3 /* ZMBarrio.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZMBarrio.h; sourceTree = "<group>"; };
 		48BC73481775481F00D0D6E3 /* ZMBarrio.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZMBarrio.m; sourceTree = "<group>"; };
+		48CB9B4018748FF700499D24 /* ZMReportViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZMReportViewController.h; sourceTree = "<group>"; };
+		48CB9B4118748FF700499D24 /* ZMReportViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZMReportViewController.m; sourceTree = "<group>"; };
+		48CB9B441874A4BA00499D24 /* config.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = config.plist; sourceTree = "<group>"; };
 		48CFCA51176E9FAA00BE1FE7 /* ZMGradientView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZMGradientView.h; sourceTree = "<group>"; };
 		48CFCA52176E9FAA00BE1FE7 /* ZMGradientView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZMGradientView.m; sourceTree = "<group>"; };
 		48CFCA54176EA04400BE1FE7 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
@@ -167,8 +176,6 @@
 		48CFCA63176EACBA00BE1FE7 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		48CFCA65176EACC200BE1FE7 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		48CFCA67176EACC700BE1FE7 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
-		48CFCA69176EB20400BE1FE7 /* DefaultSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DefaultSettingsViewController.h; sourceTree = "<group>"; };
-		48CFCA6A176EB20400BE1FE7 /* DefaultSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DefaultSettingsViewController.m; sourceTree = "<group>"; };
 		48EA93B31767EC5C00A91B5C /* AEE.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AEE.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		48EA93B61767EC5C00A91B5C /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		48EA93B81767EC5C00A91B5C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -184,8 +191,6 @@
 		48EA93CC1767EC5C00A91B5C /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		48EA93CF1767EC5C00A91B5C /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
 		48EA93D21767EC5C00A91B5C /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPad.storyboard; sourceTree = "<group>"; };
-		48EA93D41767EC5C00A91B5C /* ZMViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZMViewController.h; sourceTree = "<group>"; };
-		48EA93D51767EC5C00A91B5C /* ZMViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZMViewController.m; sourceTree = "<group>"; };
 		48EA93DC1767EC5C00A91B5C /* AEETests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AEETests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		48EA93DD1767EC5C00A91B5C /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		48EA93E51767EC5C00A91B5C /* AEETests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "AEETests-Info.plist"; sourceTree = "<group>"; };
@@ -217,6 +222,7 @@
 		48EA94191769524400A91B5C /* ZMBDownsDetailedTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZMBDownsDetailedTableViewController.m; sourceTree = "<group>"; };
 		48EA941B1769551300A91B5C /* ZMBDownsDetailedTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZMBDownsDetailedTableViewCell.h; sourceTree = "<group>"; };
 		48EA941C1769551300A91B5C /* ZMBDownsDetailedTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZMBDownsDetailedTableViewCell.m; sourceTree = "<group>"; };
+		48EFED1C187A1FAA00A15718 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FacebookSDK.framework; path = ../../FacebookSDK/FacebookSDK.framework; sourceTree = "<group>"; };
 		48FAA924177CF2DF001F8A3F /* ZMGeocoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZMGeocoder.h; sourceTree = "<group>"; };
 		48FAA925177CF2DF001F8A3F /* ZMGeocoder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZMGeocoder.m; sourceTree = "<group>"; };
 		48FAA927177E8D39001F8A3F /* ZMPointAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZMPointAnnotation.h; sourceTree = "<group>"; };
@@ -233,9 +239,6 @@
 		48FAA94617809E71001F8A3F /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
 		48FAA94817826BCB001F8A3F /* ZMNewUserViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZMNewUserViewController.h; sourceTree = "<group>"; };
 		48FAA94917826BCC001F8A3F /* ZMNewUserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZMNewUserViewController.m; sourceTree = "<group>"; };
-		48FAA94A17826BCD001F8A3F /* ZMNewUserViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZMNewUserViewController.xib; sourceTree = "<group>"; };
-		48FAA94D178273DD001F8A3F /* PAWActivityView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PAWActivityView.h; sourceTree = "<group>"; };
-		48FAA94E178273DE001F8A3F /* PAWActivityView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PAWActivityView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -245,7 +248,9 @@
 			files = (
 				488107DF177A5B4F00B9C839 /* MapKit.framework in Frameworks */,
 				488107CE1777649000B9C839 /* CoreData.framework in Frameworks */,
+				4862F50918E7CC2300A69845 /* FacebookSDK.framework in Frameworks */,
 				48CFCA68176EACC700BE1FE7 /* SystemConfiguration.framework in Frameworks */,
+				4862F50818E7CBFB00A69845 /* Parse.framework in Frameworks */,
 				48CFCA66176EACC200BE1FE7 /* StoreKit.framework in Frameworks */,
 				48CFCA64176EACBA00BE1FE7 /* Security.framework in Frameworks */,
 				48CFCA62176EACB400BE1FE7 /* MobileCoreServices.framework in Frameworks */,
@@ -258,7 +263,6 @@
 				48EA93F51767EF1A00A91B5C /* libxml2.2.dylib in Frameworks */,
 				48EA93B71767EC5C00A91B5C /* UIKit.framework in Frameworks */,
 				48EA93B91767EC5C00A91B5C /* Foundation.framework in Frameworks */,
-				48CFCA57176EAB4B00BE1FE7 /* Parse.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -275,18 +279,73 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4809544A1879138000E32890 /* HttpClient */ = {
+			isa = PBXGroup;
+			children = (
+				48EA940C1769359A00A91B5C /* ZMClientProcessor.h */,
+				48EA940D1769359A00A91B5C /* ZMClientProcessor.m */,
+			);
+			name = HttpClient;
+			sourceTree = "<group>";
+		};
+		4809544B187913A900E32890 /* Map */ = {
+			isa = PBXGroup;
+			children = (
+				488107D31779374400B9C839 /* ZMCoordinate.h */,
+				488107D41779374500B9C839 /* ZMCoordinate.m */,
+				488107D6177952A600B9C839 /* ZMMapViewController.h */,
+				488107D7177952A700B9C839 /* ZMMapViewController.m */,
+				488107D8177952A700B9C839 /* ZMMapViewController.xib */,
+				48FAA924177CF2DF001F8A3F /* ZMGeocoder.h */,
+				48FAA925177CF2DF001F8A3F /* ZMGeocoder.m */,
+				48FAA927177E8D39001F8A3F /* ZMPointAnnotation.h */,
+				48FAA928177E8D39001F8A3F /* ZMPointAnnotation.m */,
+			);
+			name = Map;
+			sourceTree = "<group>";
+		};
+		4809544C1879146200E32890 /* BreakDownsViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				48CFCA51176E9FAA00BE1FE7 /* ZMGradientView.h */,
+				48CFCA52176E9FAA00BE1FE7 /* ZMGradientView.m */,
+				48EA940F17693AD700A91B5C /* ZMTableViewViewController.h */,
+				48EA941017693AD700A91B5C /* ZMTableViewViewController.m */,
+				48EA941217693EE700A91B5C /* ZMBreakdownsTableViewCell.h */,
+				48EA941317693EE700A91B5C /* ZMBreakdownsTableViewCell.m */,
+				48EA94181769524400A91B5C /* ZMBDownsDetailedTableViewController.h */,
+				48EA94191769524400A91B5C /* ZMBDownsDetailedTableViewController.m */,
+				48EA941B1769551300A91B5C /* ZMBDownsDetailedTableViewCell.h */,
+				48EA941C1769551300A91B5C /* ZMBDownsDetailedTableViewCell.m */,
+			);
+			name = BreakDownsViewControllers;
+			sourceTree = "<group>";
+		};
+		4809544D1879147A00E32890 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				4817D7941772A4A60056FE9A /* ZMPueblo.h */,
+				4817D7951772A4A60056FE9A /* ZMPueblo.m */,
+				48BC73471775481F00D0D6E3 /* ZMBarrio.h */,
+				48BC73481775481F00D0D6E3 /* ZMBarrio.m */,
+			);
+			name = Data;
+			sourceTree = "<group>";
+		};
 		481A914A176FFCB1007B6732 /* Login */ = {
 			isa = PBXGroup;
 			children = (
-				481A9144176FF9B9007B6732 /* ZMUserConfigViewController.h */,
-				481A9145176FF9B9007B6732 /* ZMUserConfigViewController.m */,
-				481A9146176FF9B9007B6732 /* ZMUserConfigViewController.xib */,
+				48FAA94817826BCB001F8A3F /* ZMNewUserViewController.h */,
+				48FAA94917826BCC001F8A3F /* ZMNewUserViewController.m */,
+				480954531879D36500E32890 /* ZMNewUserViewController.xib */,
 				481A914B176FFCC2007B6732 /* MyLogInViewController.h */,
 				481A914C176FFCC2007B6732 /* MyLogInViewController.m */,
 				481A914D176FFCC2007B6732 /* MySignUpViewController.h */,
 				481A914E176FFCC2007B6732 /* MySignUpViewController.m */,
 				486FE899185E897E00E7DF63 /* ZMParseHelper.h */,
 				486FE89A185E897E00E7DF63 /* ZMParseHelper.m */,
+				48FAA939177E9B42001F8A3F /* ZMSettingsViewController.h */,
+				48FAA93A177E9B42001F8A3F /* ZMSettingsViewController.m */,
 			);
 			name = Login;
 			sourceTree = "<group>";
@@ -368,9 +427,19 @@
 			name = Source;
 			sourceTree = "<group>";
 		};
+		48CB9B431874915300499D24 /* Report */ = {
+			isa = PBXGroup;
+			children = (
+				48CB9B4018748FF700499D24 /* ZMReportViewController.h */,
+				48CB9B4118748FF700499D24 /* ZMReportViewController.m */,
+			);
+			name = Report;
+			sourceTree = "<group>";
+		};
 		48EA93AA1767EC5C00A91B5C = {
 			isa = PBXGroup;
 			children = (
+				488BC1871876353600360457 /* Settings.bundle */,
 				48EA93BC1767EC5C00A91B5C /* AEE */,
 				48EA93E31767EC5C00A91B5C /* AEETests */,
 				48EA93B51767EC5C00A91B5C /* Frameworks */,
@@ -391,6 +460,8 @@
 		48EA93B51767EC5C00A91B5C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				4862F50618E7CB9400A69845 /* Parse.framework */,
+				48EFED1C187A1FAA00A15718 /* FacebookSDK.framework */,
 				488107DE177A5B4E00B9C839 /* MapKit.framework */,
 				488107CD1777649000B9C839 /* CoreData.framework */,
 				48CFCA67176EACC700BE1FE7 /* SystemConfiguration.framework */,
@@ -417,62 +488,34 @@
 			children = (
 				482FDCAF185E6C4E00A033DD /* APIs */,
 				482E7BFC178BAB4B006E4D81 /* AEE.entitlements */,
-				48FAA94D178273DD001F8A3F /* PAWActivityView.h */,
-				48FAA94E178273DE001F8A3F /* PAWActivityView.m */,
 				488107E0177A719E00B9C839 /* Source */,
 				488107CF177764AD00B9C839 /* DataModel */,
 				481A9166176FFE8B007B6732 /* Assets */,
 				481A914A176FFCB1007B6732 /* Login */,
-				48CFCA69176EB20400BE1FE7 /* DefaultSettingsViewController.h */,
-				48CFCA6A176EB20400BE1FE7 /* DefaultSettingsViewController.m */,
 				48EA93F61767EF3C00A91B5C /* wsdl */,
 				48EA93C51767EC5C00A91B5C /* ZMAppDelegate.h */,
 				48EA93C61767EC5C00A91B5C /* ZMAppDelegate.m */,
 				48EA93CE1767EC5C00A91B5C /* MainStoryboard_iPhone.storyboard */,
 				48EA93D11767EC5C00A91B5C /* MainStoryboard_iPad.storyboard */,
-				48EA93D41767EC5C00A91B5C /* ZMViewController.h */,
-				48EA93D51767EC5C00A91B5C /* ZMViewController.m */,
+				48CB9B431874915300499D24 /* Report */,
 				48EA93BD1767EC5C00A91B5C /* Supporting Files */,
-				48EA940C1769359A00A91B5C /* ZMClientProcessor.h */,
-				48EA940D1769359A00A91B5C /* ZMClientProcessor.m */,
-				48EA940F17693AD700A91B5C /* ZMTableViewViewController.h */,
-				48EA941017693AD700A91B5C /* ZMTableViewViewController.m */,
-				48EA941217693EE700A91B5C /* ZMBreakdownsTableViewCell.h */,
-				48EA941317693EE700A91B5C /* ZMBreakdownsTableViewCell.m */,
-				48EA94181769524400A91B5C /* ZMBDownsDetailedTableViewController.h */,
-				48EA94191769524400A91B5C /* ZMBDownsDetailedTableViewController.m */,
-				48EA941B1769551300A91B5C /* ZMBDownsDetailedTableViewCell.h */,
-				48EA941C1769551300A91B5C /* ZMBDownsDetailedTableViewCell.m */,
-				48CFCA51176E9FAA00BE1FE7 /* ZMGradientView.h */,
-				48CFCA52176E9FAA00BE1FE7 /* ZMGradientView.m */,
+				4809544A1879138000E32890 /* HttpClient */,
+				4809544C1879146200E32890 /* BreakDownsViewControllers */,
 				4817D79117700B290056FE9A /* ZMConfigDataParser.h */,
 				4817D79217700B290056FE9A /* ZMConfigDataParser.m */,
-				4817D7941772A4A60056FE9A /* ZMPueblo.h */,
-				4817D7951772A4A60056FE9A /* ZMPueblo.m */,
-				48BC73471775481F00D0D6E3 /* ZMBarrio.h */,
-				48BC73481775481F00D0D6E3 /* ZMBarrio.m */,
+				4809544D1879147A00E32890 /* Data */,
 				488107CC177762BC00B9C839 /* DataModel */,
-				488107D31779374400B9C839 /* ZMCoordinate.h */,
-				488107D41779374500B9C839 /* ZMCoordinate.m */,
-				488107D6177952A600B9C839 /* ZMMapViewController.h */,
-				488107D7177952A700B9C839 /* ZMMapViewController.m */,
-				488107D8177952A700B9C839 /* ZMMapViewController.xib */,
-				48FAA925177CF2DF001F8A3F /* ZMGeocoder.m */,
-				48FAA924177CF2DF001F8A3F /* ZMGeocoder.h */,
-				48FAA927177E8D39001F8A3F /* ZMPointAnnotation.h */,
-				48FAA928177E8D39001F8A3F /* ZMPointAnnotation.m */,
-				48FAA939177E9B42001F8A3F /* ZMSettingsViewController.h */,
-				48FAA93A177E9B42001F8A3F /* ZMSettingsViewController.m */,
+				4809544B187913A900E32890 /* Map */,
 				48FAA93C177FD421001F8A3F /* ZMPueblosViewController.h */,
 				48FAA93D177FD421001F8A3F /* ZMPueblosViewController.m */,
 				48FAA93F177FD88E001F8A3F /* ZMBarriosViewController.h */,
 				48FAA940177FD88E001F8A3F /* ZMBarriosViewController.m */,
 				48FAA942177FE8D8001F8A3F /* ZMLocationViewController.h */,
 				48FAA943177FE8D9001F8A3F /* ZMLocationViewController.m */,
-				48FAA94817826BCB001F8A3F /* ZMNewUserViewController.h */,
-				48FAA94917826BCC001F8A3F /* ZMNewUserViewController.m */,
-				48FAA94A17826BCD001F8A3F /* ZMNewUserViewController.xib */,
 				482FDCAD185E6B2200A033DD /* Images.xcassets */,
+				48CB9B441874A4BA00499D24 /* config.plist */,
+				488BC1891876382C00360457 /* Entitlements.plist */,
+				4809544F1879D33900E32890 /* CustomStrings.strings */,
 			);
 			path = AEE;
 			sourceTree = "<group>";
@@ -586,6 +629,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				es,
 			);
 			mainGroup = 48EA93AA1767EC5C00A91B5C;
 			productRefGroup = 48EA93B41767EC5C00A91B5C /* Products */;
@@ -603,25 +647,28 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				488BC18A1876382C00360457 /* Entitlements.plist in Resources */,
 				48EA93C11767EC5C00A91B5C /* InfoPlist.strings in Resources */,
 				48EA93C91767EC5C00A91B5C /* Default.png in Resources */,
 				48EA93CB1767EC5C00A91B5C /* Default@2x.png in Resources */,
 				48EA93CD1767EC5C00A91B5C /* Default-568h@2x.png in Resources */,
+				48CB9B451874A4BA00499D24 /* config.plist in Resources */,
 				48EA93D01767EC5C00A91B5C /* MainStoryboard_iPhone.storyboard in Resources */,
 				48EA93D31767EC5C00A91B5C /* MainStoryboard_iPad.storyboard in Resources */,
-				481A9148176FF9B9007B6732 /* ZMUserConfigViewController.xib in Resources */,
+				480954501879D33900E32890 /* CustomStrings.strings in Resources */,
 				481A915C176FFE75007B6732 /* Exit.png in Resources */,
 				481A915D176FFE75007B6732 /* ExitDown.png in Resources */,
 				481A9160176FFE75007B6732 /* LoginFieldBG.png in Resources */,
 				481A9162176FFE75007B6732 /* MainBG.png in Resources */,
 				481A9163176FFE75007B6732 /* SignUp.png in Resources */,
+				488BC1881876353600360457 /* Settings.bundle in Resources */,
 				481A9164176FFE75007B6732 /* SignUpDown.png in Resources */,
 				481A9165176FFE75007B6732 /* SignUpFieldBG.png in Resources */,
 				481A916A17700853007B6732 /* Login.png in Resources */,
 				482FDCAE185E6B2200A033DD /* Images.xcassets in Resources */,
 				481A916C17700AA9007B6732 /* barrios.json in Resources */,
 				488107DA177952A700B9C839 /* ZMMapViewController.xib in Resources */,
-				48FAA94C17826BCE001F8A3F /* ZMNewUserViewController.xib in Resources */,
+				480954511879D36500E32890 /* ZMNewUserViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -660,7 +707,6 @@
 				488107E5177A78B500B9C839 /* UIViewController+KNSemiModal.m in Sources */,
 				48EA93C31767EC5C00A91B5C /* main.m in Sources */,
 				48EA93C71767EC5C00A91B5C /* ZMAppDelegate.m in Sources */,
-				48EA93D61767EC5C00A91B5C /* ZMViewController.m in Sources */,
 				48EA94051767EF3C00A91B5C /* ax22.m in Sources */,
 				48EA94061767EF3C00A91B5C /* BreakdownReportSvc.m in Sources */,
 				48EA94071767EF3C00A91B5C /* NSDate+ISO8601Parsing.m in Sources */,
@@ -675,8 +721,6 @@
 				48EA941A1769524400A91B5C /* ZMBDownsDetailedTableViewController.m in Sources */,
 				48EA941D1769551300A91B5C /* ZMBDownsDetailedTableViewCell.m in Sources */,
 				48CFCA53176E9FAA00BE1FE7 /* ZMGradientView.m in Sources */,
-				48CFCA6B176EB20400BE1FE7 /* DefaultSettingsViewController.m in Sources */,
-				481A9147176FF9B9007B6732 /* ZMUserConfigViewController.m in Sources */,
 				481A914F176FFCC2007B6732 /* MyLogInViewController.m in Sources */,
 				481A9150176FFCC2007B6732 /* MySignUpViewController.m in Sources */,
 				4817D79317700B290056FE9A /* ZMConfigDataParser.m in Sources */,
@@ -696,10 +740,10 @@
 				48FAA93B177E9B42001F8A3F /* ZMSettingsViewController.m in Sources */,
 				48FAA93E177FD421001F8A3F /* ZMPueblosViewController.m in Sources */,
 				48FAA941177FD88E001F8A3F /* ZMBarriosViewController.m in Sources */,
+				48CB9B4218748FF700499D24 /* ZMReportViewController.m in Sources */,
 				48FAA944177FE8D9001F8A3F /* ZMLocationViewController.m in Sources */,
 				48FAA94717809E71001F8A3F /* User.m in Sources */,
 				48FAA94B17826BCE001F8A3F /* ZMNewUserViewController.m in Sources */,
-				48FAA94F178273DF001F8A3F /* PAWActivityView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -710,7 +754,6 @@
 				486FE89C185E897E00E7DF63 /* ZMParseHelper.m in Sources */,
 				48EA93EB1767EC5C00A91B5C /* AEETests.m in Sources */,
 				488107E3177A73BF00B9C839 /* UIViewController+KNSemiModal.m in Sources */,
-				48FAA950178273DF001F8A3F /* PAWActivityView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -725,10 +768,19 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		480954531879D36500E32890 /* ZMNewUserViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				480954521879D36500E32890 /* en */,
+			);
+			name = ZMNewUserViewController.xib;
+			sourceTree = "<group>";
+		};
 		48EA93BF1767EC5C00A91B5C /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
 				48EA93C01767EC5C00A91B5C /* en */,
+				480954571879D37700E32890 /* es */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -737,6 +789,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				48EA93CF1767EC5C00A91B5C /* en */,
+				480954551879D37600E32890 /* es */,
 			);
 			name = MainStoryboard_iPhone.storyboard;
 			sourceTree = "<group>";
@@ -745,6 +798,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				48EA93D21767EC5C00A91B5C /* en */,
+				480954561879D37600E32890 /* es */,
 			);
 			name = MainStoryboard_iPad.storyboard;
 			sourceTree = "<group>";
@@ -753,6 +807,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				48EA93E71767EC5C00A91B5C /* en */,
+				480954581879D37700E32890 /* es */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -772,7 +827,8 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -793,7 +849,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -809,7 +865,8 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				COPY_PHASE_STRIP = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
@@ -823,7 +880,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				SDKROOT = iphoneos;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -833,12 +890,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_ENTITLEMENTS = AEE/AEE.entitlements;
+				CODE_SIGN_ENTITLEMENTS = "";
 				CODE_SIGN_IDENTITY = "iPhone Developer: Milton Mitjans (ANLCN4ZK6G)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Milton Mitjans (ANLCN4ZK6G)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)\"",
+					"$(SRCROOT)",
+					/Users/miltondmitjans/Documents/FacebookSDK,
+					/Users/miltondmitjans/Documents/developer,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "AEE/AEE-Prefix.pch";
@@ -846,8 +905,8 @@
 				OTHER_CFLAGS = "-I/usr/include/libxml2";
 				OTHER_LDFLAGS = "-lxml2";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "D80297F8-44A0-4C67-A98D-496B7B23FD9A";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "D80297F8-44A0-4C67-A98D-496B7B23FD9A";
+				PROVISIONING_PROFILE = "8D8D9538-0324-4CB0-B09C-96064B481063";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "8D8D9538-0324-4CB0-B09C-96064B481063";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -857,12 +916,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_ENTITLEMENTS = AEE/AEE.entitlements;
+				CODE_SIGN_ENTITLEMENTS = "";
 				CODE_SIGN_IDENTITY = "iPhone Developer: Milton Mitjans (ANLCN4ZK6G)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Milton Mitjans (ANLCN4ZK6G)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)\"",
+					"$(SRCROOT)",
+					/Users/miltondmitjans/Documents/FacebookSDK,
+					/Users/miltondmitjans/Documents/developer,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "AEE/AEE-Prefix.pch";
@@ -870,8 +931,8 @@
 				OTHER_CFLAGS = "-I/usr/include/libxml2";
 				OTHER_LDFLAGS = "-lxml2";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "D80297F8-44A0-4C67-A98D-496B7B23FD9A";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "D80297F8-44A0-4C67-A98D-496B7B23FD9A";
+				PROVISIONING_PROFILE = "8D8D9538-0324-4CB0-B09C-96064B481063";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "8D8D9538-0324-4CB0-B09C-96064B481063";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
